@@ -8,16 +8,31 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/estilo.min.css" />
     <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet"/>
+
 </head>
 <body>
     <!-- Menu -->
     <?php
         include "../inc/menu.inc";
     ?>
+    <?php
+    session_start();
+    if(isset($_SESSION["conf_email"])){
+        if(!$_SESSION["conf_email"]){
+            echo'<div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Email já cadastrado.<strong> Favor inserir um email válido.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>';
+            $_SESSION["conf_email"]=true;
+        }
+    }
+    ?>
     <div class = "row">
         <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
             <h2 class="h2_cad">Cadastre-se</h2>
-            <form class="form" action = "recebe_cliente.php" method = "POST">
+            <form class="form" action = "salvar_cliente.php" method = "POST">
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
                         <label style="padding-top:5%"> Nome: </label>
@@ -38,7 +53,7 @@
                 </div>
                 <div class = "row">
                     <div class = "col offset-lg-6 offset-sm-5">
-                        <p style="padding-top:10px;"><a class="btn btn-lg btn-warning" href="../php/cadastro_cliente.php" role="button">Cadastrar</a></p>
+                        <p style="padding-top:10px;"><button type="submit" class="btn btn-warning">Cadastrar</button></p>
                     </div>
                 </div>
             </form>
