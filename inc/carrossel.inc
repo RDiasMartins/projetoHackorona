@@ -30,7 +30,7 @@
                 <div class="carousel-caption text-right">
                     <h1>Cupons</h1>
                     <p>Preços que cabem no seu bolso.</p>
-                    <p><a class="btn btn-lg btn-warning" href="cupons.php" role="button">Comprar</a></p>
+                    <p><a class="btn btn-lg btn-warning" href="../php/cuponsCadastrados.php" role="button">Comprar</a></p>
                 </div>
             </div>
         </div>
