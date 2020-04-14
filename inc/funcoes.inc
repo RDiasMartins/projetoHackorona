@@ -1,10 +1,10 @@
 <?php
-function cadastrar_cliente(){
-    $nome=$_POST["nome"];
-    $email=$_POST["email"];
-    $senha=$_POST["senha"];
+    function cadastrar_cliente(){
+        $nome=$_POST["nome"];
+        $email=$_POST["email"];
+        $senha=$_POST["senha"];
 
-    if(!file_exists("cliente.xml")){
+        if(!file_exists("cliente.xml")){
 $xml=
 '<?xml version="1.0" encoding="UTF-8"?>
 <clientes>
@@ -14,38 +14,38 @@ $xml=
         <senha>'.$senha.'</senha>
     </cliente>
 </clientes>';
-        file_put_contents("cliente.xml",$xml);
-        echo'<h2 style="padding:10% 0% 10% 0%;">Cadastro realizado com sucesso!</h2>';
-    }else{
-        $xml=simplexml_load_file("cliente.xml");
-        $cliente=$xml->addChild("cliente");
-        $cliente->addChild("nome", $nome);
-        $cliente->addChild("email", $email);
-        $cliente->addChild("senha", $senha);
-        file_put_contents("cliente.xml", $xml->asXML());
-        echo'<h2>Cadastro realizado com sucesso!</h2>';
-    }
-}
-    function buscarCodigo($entidade) {
-    if (file_exists("sequencia_codigos.xml")) {
-        $xml = simplexml_load_file("sequencia_codigos.xml");
-        switch ($entidade) {
-            case "cupon":
-                return $xml-> cupon;
-                break;
+            file_put_contents("cliente.xml",$xml);
+            echo'<h2 style="padding:10% 0% 10% 0%;"> Cupom cadastrado. </h2>';
+        }else{
+            $xml=simplexml_load_file("cliente.xml");
+            $cliente=$xml->addChild("cliente");
+            $cliente->addChild("nome", $nome);
+            $cliente->addChild("email", $email);
+            $cliente->addChild("senha", $senha);
+            file_put_contents("cliente.xml", $xml->asXML());
+            echo'<h2 style="padding:10% 0% 10% 0%;">Cupom cadastrado.</h2>';
         }
     }
-    else {
+        function buscarCodigo($entidade) {
+        if (file_exists("sequencia_codigos.xml")) {
+            $xml = simplexml_load_file("sequencia_codigos.xml");
+            switch ($entidade) {
+                case "cupon":
+                    return $xml-> cupon;
+                    break;
+            }
+        }
+        else {
         $xml =
 '<?xml version="1.0" encoding="UTF-8" ?>
     <codigos>
         <cupon>1</cupon>
     </codigos>';
 
-        file_put_contents("sequencia_codigos.xml", $xml);
-            return 1;
+            file_put_contents("sequencia_codigos.xml", $xml);
+                return 1;
+        }
     }
-}
 
     function atualizarCodigo($entidade){
         if(file_exists("sequencia_codigos.xml")){
@@ -59,7 +59,7 @@ $xml=
                     break;
             }
             file_put_contents("sequencia_codigos.xml", $xml->asXML());
-        } 
+        }
     }
 
  function cadastrarCupon(){
@@ -71,7 +71,7 @@ $xml=
 
          $alterar =$_POST["alterar"];
         if(!file_exists("cupons.xml")){
-            $xml = 
+            $xml =
 '<?xml version="1.0" encoding="UTF-8"?>
 <cupons>
     <cupon>
@@ -86,7 +86,10 @@ $xml=
             atualizarCodigo("cupon");
             echo '<div class="container center" style="margin-top:5%;">
                     <h2 class="text-center">Cupom cadastrado com sucesso!</h2>
-                    <br/><a class="btn btn-lg btn-danger"style="background-color:#FFDB58 " href="cadastroCupons.php">Novo Cupon</a>
+                    <br/>
+                    <div class="float-right">
+                        <a href="cadastroCupons.php"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Novo cupom</a>
+                    </div>
             </div>';
         }else{
             $xml=simplexml_load_file("cupons.xml");
@@ -100,9 +103,13 @@ $xml=
                 atualizarCodigo("cupon");
                echo '<div class="container center" style="margin-top:5%;">
                     <h2 class="text-center">Cupom cadastrado com sucesso!</h2>
-                    <br/><a style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg" float-right" href="cadastroCupons.php">Novo Cupon</a>
+                    <br/>
+                    <div class="float-right">
+                        <a href="cadastroCupons.php"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Novo cupom</a>
+                    </div>
+
             </div>';
-          
+
             file_put_contents("cupons.xml", $xml->asXML());
         }
         return true;

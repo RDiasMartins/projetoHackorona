@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <clientes>
     <cliente>
-        <nome>amanda</nome>
-        <email>amanda@email.com</email>
+        <nome>Renan</nome>
+        <email>renan2204@outlook.com</email>
         <senha>123</senha>
     </cliente>
-</clientes>
+<cliente><nome>Renan</nome><email>martins.dias@aluno.ifsp.edu.br</email><senha>123</senha></cliente><cliente><nome>Renan</nome><email>renan@gmail.com</email><senha>321</senha></cliente></clientes>

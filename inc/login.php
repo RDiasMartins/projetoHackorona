@@ -1,10 +1,6 @@
 <?php
     session_start();
-
-    if(!isset($_SESSION['login'])){
-        $_SESSION['login']=0;
-        session_destroy();
-    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -22,9 +18,9 @@
         <!-- Menu -->
         <?php
             if($_SESSION['login']==1){
-                include "inc/menuFIS.inc";
+                include "../inc/menuFIS.inc";
             }else if($_SESSION['login']==2){
-                include "inc/menuJUR.inc";
+                include "..inc/menuJUR.inc";
             }else{
                 include "inc/menu.inc";
             }

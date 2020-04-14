@@ -9,14 +9,15 @@
         }
     }
     ?>
-  
+
     <header>
-       <div class="fundo" style="background-color:#FFDB58; margin-bottom:5%; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white;">
+       <div class="fundo" style="background-color:#333; margin-bottom:5%; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white;">
             <div class="p-4 p-md-5 text-white ">
-                <h2 class="display-4 text-bold font-weight-normal">Cadastrar Cupons de Desconto</h2>
+                <h2 style="font-family: consolas;" class="display-4 text-bold font-weight-normal">Cadastramento de cupons</h2>
             </div>
         </div>
     </header>
+
     <div class="container">
         <form action="cadastroCupons.php" method="post">
             <div class="form-group">
@@ -29,7 +30,7 @@
                         $n_codigo = buscarCodigo("cupon");
                         echo'value="'.$n_codigo.'"';
                         ?>
-                    readonly = "readonly"/>    
+                    readonly = "readonly"/>
                 </div>
             </div>
             <div class="form-group">
@@ -68,7 +69,7 @@
                     />
                 </div>
             </div>
-                <input type="hidden" name="alterar" 
+                <input type="hidden" name="alterar"
                     <?php
                         if($encontrou){
                             echo 'value= "1"';
@@ -78,7 +79,7 @@
                     ?>
                 />
             <div class="float-right">
-                <button type="submit" style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Cadastrar Cupon</button>
+                <button type="submit" style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Cadastrar Cupom</button>
             </div>
         </form>
     </div>
