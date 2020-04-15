@@ -18,7 +18,7 @@ $xml=
     </cliente>
 </clientes>';
             file_put_contents("cliente.xml",$xml);
-            echo'<h2 style="padding:10% 0% 10% 0%;"> Cadastro realizado com sucesso. </h2>';
+            header("Location:login_cliente.php");
         }else{
             $xml=simplexml_load_file("cliente.xml");
             $cliente=$xml->addChild("cliente");
@@ -27,7 +27,7 @@ $xml=
             $cliente->addChild("email", $email);
             $cliente->addChild("senha", $senha);
             file_put_contents("cliente.xml", $xml->asXML());
-            echo'<h2 style="padding:10% 0% 10% 0%;">Cadastro realizado com sucesso.</h2>';
+            header("Location:login_cliente.php");
         }
     }
 
