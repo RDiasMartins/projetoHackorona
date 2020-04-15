@@ -6,4 +6,12 @@
         <email>milena@email.com</email>
         <senha>123</senha>
     </cliente>
+<<<<<<< HEAD
 <cliente><nome>milena</nome><cpf>443.015.488-07</cpf><email>milenaa@email.com</email><senha>123</senha></cliente><cliente><nome>amanda</nome><cpf>443.015.488-07</cpf><email>acampezan@gmail.com</email><senha>123</senha></cliente><cliente><nome>milena</nome><cpf>443.015.488-07</cpf><email>amanditacp@ig.com.br</email><senha>123</senha></cliente><cliente><nome>milena</nome><cpf>443.015.488-07</cpf><email>ritacampezan@hotmail.com</email><senha>123</senha></cliente></clientes>
+=======
+<<<<<<< HEAD
+<cliente><nome>Amalia Melo</nome><email>amalia@amalia.com</email><senha>234333avm</senha></cliente></clientes>
+=======
+<cliente><nome>milena</nome><cpf>443.015.488-07</cpf><email>milenaa@email.com</email><senha>123</senha></cliente><cliente><nome>amanda</nome><cpf>443.015.488-07</cpf><email>acampezan@gmail.com</email><senha>123</senha></cliente></clientes>
+>>>>>>> e9f62dd62be0f08e28b7b33f9d6f68b564d28fcb
+>>>>>>> 97cb9c025dcc8f2d26280634a2a329449f83c9d9

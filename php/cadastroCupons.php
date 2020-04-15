@@ -43,7 +43,7 @@
 
                         }else{
                             echo "<section>
-                                        <h2 class=\"text-center\">Cupom já cadastrado. <br><b><a href=\"cadastro_palavras.php\">Cadastre uma nova palavra.</a></b></h2>
+                                        <h2 class=\"text-center\">Cupom já cadastrado. <br><b><a href=\"cadastroCupons.php\">Cadastre um novo Cupom.</a></b></h2>
                                     </section>";
                         }
                     }
