@@ -5,4 +5,4 @@
         <email>amanda@email.com</email>
         <senha>123</senha>
     </cliente>
-</clientes>
+<cliente><nome>Amalia Melo</nome><email>amalia@amalia.com</email><senha>234333avm</senha></cliente></clientes>
