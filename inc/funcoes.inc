@@ -1,6 +1,8 @@
 <?php
+
     function cadastrar_cliente(){
         $nome=$_POST["nome"];
+        $cpf=$_POST["cpf"];
         $email=$_POST["email"];
         $senha=$_POST["senha"];
 
@@ -10,33 +12,36 @@ $xml=
 <clientes>
     <cliente>
         <nome>'.$nome.'</nome>
+        <cpf>'.$cpf.'</cpf>
         <email>'.$email.'</email>
         <senha>'.$senha.'</senha>
     </cliente>
 </clientes>';
             file_put_contents("cliente.xml",$xml);
-            echo'<h2 style="padding:10% 0% 10% 0%;"> Cupom cadastrado. </h2>';
+            echo'<h2 style="padding:10% 0% 10% 0%;"> Cadastro realizado com sucesso. </h2>';
         }else{
             $xml=simplexml_load_file("cliente.xml");
             $cliente=$xml->addChild("cliente");
             $cliente->addChild("nome", $nome);
+            $cliente->addChild("cpf", $cpf);
             $cliente->addChild("email", $email);
             $cliente->addChild("senha", $senha);
             file_put_contents("cliente.xml", $xml->asXML());
-            echo'<h2 style="padding:10% 0% 10% 0%;">Cupom cadastrado.</h2>';
+            echo'<h2 style="padding:10% 0% 10% 0%;">Cadastro realizado com sucesso.</h2>';
         }
     }
-        function buscarCodigo($entidade) {
-        if (file_exists("sequencia_codigos.xml")) {
-            $xml = simplexml_load_file("sequencia_codigos.xml");
-            switch ($entidade) {
-                case "cupon":
-                    return $xml-> cupon;
-                    break;
-            }
+
+    function buscarCodigo($entidade) {
+    if (file_exists("sequencia_codigos.xml")) {
+        $xml = simplexml_load_file("sequencia_codigos.xml");
+        switch ($entidade) {
+            case "cupon":
+                return $xml-> cupon;
+                break;
         }
-        else {
-        $xml =
+    }
+    else {
+    $xml =
 '<?xml version="1.0" encoding="UTF-8" ?>
     <codigos>
         <cupon>1</cupon>

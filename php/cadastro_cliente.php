@@ -40,18 +40,12 @@
                 ';
                 $_SESSION["conf_email"]=true;
             }
-    }
+        }
     ?>
     <div class = "row">
         <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
             <h2 style="font-family:consolas;" class="h2_cad">Cadastre-se</h2>
             <form class="form" action = "salvar_cliente.php" method = "POST">
-                <div class = "row">
-                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label style="padding-top:5%"> CPF: </label>
-                        <input type="cpf" name="CPF" id="CPF" class="form-control" required="required"/>
-                    </div>
-                </div>
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
                         <label style="padding-top:5%"> Nome: </label>
@@ -60,18 +54,24 @@
                 </div>
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label> Email: </label>
+                        <label style="padding-top:5%"> CPF: </label>
+                        <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required"/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                        <label style="padding-top:5%"> Email: </label>
                         <input type="email" name="email" id="email" class="form-control email" required="required"/>
                     </div>
                 </div>
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label> Senha: </label>
-                        <input type="password" name="senha" id="senha" class="form-control" required="required"/>
+                        <label style="padding-top:5%"> Senha: </label>
+                        <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
                     </div>
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label> Confirme a senha: </label>
-                        <input type="password" name="senhaConfirmacao" id="senhaConfirmacao" class="form-control" required="required"/>
+                        <label style="padding-top:5%"> Confirme a senha: </label>
+                        <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
                     </div>
                 </div>
                 <div class = "row">

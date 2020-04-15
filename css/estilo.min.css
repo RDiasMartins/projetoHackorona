@@ -42,7 +42,7 @@ body {
 /* Formulário de cadastro de cliente*/
 form{
     margin-bottom: 27%;
-    border: 1px solid silver;
+    border: 1px solid #5a5a5a;
     border-radius:5px;
 }
 .h2_cad{
