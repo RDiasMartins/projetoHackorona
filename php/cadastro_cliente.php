@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login'])){
+        $_SESSION['login']=0;
+        session_destroy();
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,25 +21,30 @@
 <body>
     <!-- Menu -->
     <?php
-        include "../inc/menu.inc";
-    ?>
-    <?php
-    session_start();
-    if(isset($_SESSION["conf_email"])){
-        if(!$_SESSION["conf_email"]){
-            echo'<div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Email já cadastrado.<strong> Favor inserir um email válido.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>';
-            $_SESSION["conf_email"]=true;
+        if($_SESSION['login']==1){
+            include "../inc/menuFIS.inc";
+        }else if($_SESSION['login']==2){
+            include "../inc/menuJUR.inc";
+        }else{
+            include "../inc/menu.inc";
         }
-    }
+    ?>
+
+    <?php
+        if(isset($_SESSION["conf_email"])){
+            if(!$_SESSION["conf_email"]){
+                echo'
+                    <div class="alert alert-warning " role="alert">
+                         <strong>E-mail já cadastrado!</strong> Tente novamente com outro endereço.
+                    </div>
+                ';
+                $_SESSION["conf_email"]=true;
+            }
+        }
     ?>
     <div class = "row">
         <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
-            <h2 class="h2_cad">Cadastre-se</h2>
+            <h2 style="font-family:consolas;" class="h2_cad">Cadastre-se</h2>
             <form class="form" action = "salvar_cliente.php" method = "POST">
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
@@ -41,14 +54,24 @@
                 </div>
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label> Email: </label>
+                        <label style="padding-top:5%"> CPF: </label>
+                        <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required"/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                        <label style="padding-top:5%"> Email: </label>
                         <input type="email" name="email" id="email" class="form-control email" required="required"/>
                     </div>
                 </div>
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label> Senha: </label>
-                        <input type="password" name="senha" id="senha" class="form-control" required="required"/>
+                        <label style="padding-top:5%"> Senha: </label>
+                        <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
+                    </div>
+                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                        <label style="padding-top:5%"> Confirme a senha: </label>
+                        <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
                     </div>
                 </div>
                 <div class = "row">
@@ -66,6 +89,10 @@
 
         include "../inc/ModalContato.inc";
     ?>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="../js/validaform.min.js"></script>
+    <script src="../js/validarForm.js"></script>
 </body>
 </html>

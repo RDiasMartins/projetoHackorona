@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <clientes>
     <cliente>
-        <nome>amanda</nome>
-        <email>amanda@email.com</email>
+        <nome>milena</nome>
+        <cpf>443.015.488-07</cpf>
+        <email>milena@email.com</email>
         <senha>123</senha>
     </cliente>
+<<<<<<< HEAD
 <cliente><nome>Amalia Melo</nome><email>amalia@amalia.com</email><senha>234333avm</senha></cliente></clientes>
+=======
+<cliente><nome>milena</nome><cpf>443.015.488-07</cpf><email>milenaa@email.com</email><senha>123</senha></cliente><cliente><nome>amanda</nome><cpf>443.015.488-07</cpf><email>acampezan@gmail.com</email><senha>123</senha></cliente></clientes>
+>>>>>>> e9f62dd62be0f08e28b7b33f9d6f68b564d28fcb

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login'])){
+        $_SESSION['login']=0;
+        session_destroy();
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -12,8 +20,13 @@
 
         <!-- Menu -->
         <?php
-            include "../inc/menuEmp.inc";
-            include "../inc/funcoes.inc";
+            if($_SESSION['login']==1){
+                include "../inc/menuFIS.inc";
+            }else if($_SESSION['login']==2){
+                include "..inc/menuJUR.inc";
+            }else{
+                include "../inc/menu.inc";
+            }
         ?>
 
         <!-- Conteúdo -->
@@ -27,7 +40,7 @@
                     else{
                         if(conferirCupon()){
                             cadastrarCupon();
-    
+
                         }else{
                             echo "<section>
                                         <h2 class=\"text-center\">Cupom já cadastrado. <br><b><a href=\"cadastroCupons.php\">Cadastre um novo Cupom.</a></b></h2>
@@ -35,12 +48,16 @@
                         }
                     }
                 }
-            ?>	
+            ?>
         <!-- Rodapé -->
         <?php
             include "../inc/rodape.inc";
 
             include "../inc/ModalContato.inc";
+        ?>
+
+        <?php
+            include "../inc/funcoes.inc";
         ?>
         <script src="../js/jquery-3.2.1.min.js"></script>
         <script src="../js/popper.min.js"></script>

@@ -10,18 +10,26 @@ body {
     border-color: #E7E7E7;
 }
 
+.page-footer{
+    padding-top: 10em;
+}
 /* Carrossel */
 .carousel {
     width: 100%;
     margin-bottom: 4rem;
+    -webkit-box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.75);
 }
 
 .carousel-caption {
     bottom: 3rem;
+
 }
 
 .carousel-item {
     height: 16rem;
+
 }
 .carousel-item > img {
     position: absolute;
@@ -34,8 +42,14 @@ body {
 /* Formulário de cadastro de cliente*/
 form{
     margin-bottom: 27%;
-    border: 1px solid silver;
+    border: 1px solid #5a5a5a;
+    border-radius:5px;
 }
 .h2_cad{
     padding-top: 10%;
+}
+
+.alert{
+    background-color: #FFD700;
+    color:black;
 }

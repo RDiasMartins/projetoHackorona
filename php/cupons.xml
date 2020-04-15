@@ -3,8 +3,8 @@
     <cupon>
         <codigo>1</codigo>
         <titulo>Cabeleireiro</titulo>
-        <descricao>Faça um corte de cabelo</descricao>
-        <valor>100</valor>
+        <descricao>123</descricao>
+        <valor>200</valor>
         <desconto>10</desconto>
     </cupon>
-<cupon><codigo>2</codigo><titulo>Petshop</titulo><descricao>serviços de lavagem de animais</descricao><valor>85</valor><desconto>15</desconto></cupon><cupon><codigo>3</codigo><titulo>restaurante</titulo><descricao>jantar</descricao><valor>48</valor><desconto>8</desconto></cupon></cupons>
+</cupons>

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login'])){
+        $_SESSION['login']=0;
+        session_destroy();
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -12,14 +20,19 @@
 
         <!-- Menu -->
         <?php
-            include "../inc/menuEmp.inc";
-            include "../inc/funcoes.inc";
+            if($_SESSION['login']==1){
+                include "../inc/menuFIS.inc";
+            }else if($_SESSION['login']==2){
+                include "..inc/menuJUR.inc";
+            }else{
+                include "../inc/menu.inc";
+            }
         ?>
 
         <!-- Conteúdo -->
-        <div class="fundo" style="background-color:#FFDB58; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white;">
+        <div class="fundo" style="background-color:#333; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white;">
             <div class="p-4 p-md-5 text-white ">
-                <h2 class="display-4 text-bold font-weight-normal">Cupons</h2>
+                <h2 style="font-family: consolas;" class="display-4 text-bold font-weight-normal">Cupons</h2>
             </div>
         </div>
         <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
@@ -50,21 +63,16 @@
                 }else{
                     echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
                 }
-            ?>	
+            ?>
     	</div>
-        <!-- Rodapé -->
-        <footer class="container">
-            <p class="float-right">&middot;
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalContato">
-                    Contato
-                </button>
-            </p>
-            <p>&copy; 2020 Instituto Federal de São Paulo, Araraquara</p>
-            <p style="font-size:8px;"><a href="https://www.freepik.com/free-photos-vectors/sale">Icones e-commerce criados por photoroyalty - www.freepik.com</a></p>
-        </footer>
         <?php
+            include "../inc/rodape.inc";
 
             include "../inc/ModalContato.inc";
+        ?>
+
+        <?php
+            include "../inc/funcoes.inc";
         ?>
         <script src="../js/jquery-3.2.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
