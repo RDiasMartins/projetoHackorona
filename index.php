@@ -1,9 +1,12 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['login'])){
-        $_SESSION['login']=0;
-        session_destroy();
+    if(isset($_SESSION["cliente"])){
+        header('Location: php/homeUsuario.php');
+    }
+
+    if(isset($_SESSION["empresa"])){
+        header('Location: php/homeEmpresa.php');
     }
 ?>
 <!DOCTYPE html>
@@ -21,13 +24,7 @@
 
         <!-- Menu -->
         <?php
-            if($_SESSION['login']==1){
-                include "inc/menuFIS.inc";
-            }else if($_SESSION['login']==2){
-                include "inc/menuJUR.inc";
-            }else{
-                include "inc/menu.inc";
-            }
+            include "inc/menu.inc";
         ?>
 
         <!--Carrossel index-->
@@ -63,6 +60,7 @@
         <?php
             include "inc/rodape.inc";
             include "inc/ModalContato.inc";
+            include "inc/ModalLogin.inc";
 
         ?>
         <script src="js/jquery-3.2.1.min.js"></script>

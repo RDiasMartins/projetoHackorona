@@ -18,7 +18,7 @@ $xml=
     </cliente>
 </clientes>';
             file_put_contents("cliente.xml",$xml);
-            header("Location:login_cliente.php");
+            header("Location: ../index.php");
         }else{
             $xml=simplexml_load_file("cliente.xml");
             $cliente=$xml->addChild("cliente");
@@ -27,21 +27,21 @@ $xml=
             $cliente->addChild("email", $email);
             $cliente->addChild("senha", $senha);
             file_put_contents("cliente.xml", $xml->asXML());
-            header("Location:login_cliente.php");
+            header("Location: ../index.php");
         }
     }
 
     function buscarCodigo($entidade) {
-    if (file_exists("sequencia_codigos.xml")) {
-        $xml = simplexml_load_file("sequencia_codigos.xml");
-        switch ($entidade) {
-            case "cupon":
-                return $xml-> cupon;
-                break;
+        if (file_exists("sequencia_codigos.xml")) {
+            $xml = simplexml_load_file("sequencia_codigos.xml");
+            switch ($entidade) {
+                case "cupon":
+                    return $xml-> cupon;
+                    break;
+            }
         }
-    }
-    else {
-    $xml =
+        else {
+        $xml =
 '<?xml version="1.0" encoding="UTF-8" ?>
     <codigos>
         <cupon>1</cupon>

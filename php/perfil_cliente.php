@@ -1,9 +1,8 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['login'])){
-        $_SESSION['login']=0;
-        session_destroy();
+    if(!isset($_SESSION["cliente"])){
+        header("location: ../index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -21,13 +20,7 @@
 
         <!-- Menu -->
         <?php
-            if($_SESSION['login']==1){
-                include "../inc/menuFIS.inc";
-            }else if($_SESSION['login']==2){
-                include "../inc/menuJUR.inc";
-            }else{
-                include "../inc/menu.inc";
-            }
+            include "../inc/menuFIS.inc";
         ?>
 
         <!-- Conteúdo -->
@@ -54,12 +47,12 @@
                             </dl>
                         </li>
                     </ul>
-                    <br/>   
+                    <br/>
                 </section>
             </div>
         </div>
         <div class = "row pb-3" style=" width:80%; margin-left:10%">
-            <div class = "col-lg-8 offset-lg-2"> 
+            <div class = "col-lg-8 offset-lg-2">
                 <div class="page-content" style=" border: 1px solid silver;">
                 <br/>
                     <ul style="list-style-type: none; padding-top:0%;">
@@ -72,7 +65,7 @@
                             </dl>
                         </li>
                         <br/>
-                    </ul>   
+                    </ul>
                 </div>
             </div>
         </div>

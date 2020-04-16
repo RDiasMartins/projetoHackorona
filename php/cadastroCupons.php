@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['login'])){
-        $_SESSION['login']=0;
+    if(!isset($_SESSION["empresa"])){
         session_destroy();
+        header('Location: ../index.php');
     }
 ?>
 <!DOCTYPE html>
@@ -20,10 +20,10 @@
 
         <!-- Menu -->
         <?php
-            if($_SESSION['login']==1){
+            if($_SESSION["cliente"]==true){
                 include "../inc/menuFIS.inc";
-            }else if($_SESSION['login']==2){
-                include "..inc/menuJUR.inc";
+            }else if($_SESSION["empresa"]==true){
+                include "../inc/menuJUR.inc";
             }else{
                 include "../inc/menu.inc";
             }

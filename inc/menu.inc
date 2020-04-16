@@ -8,8 +8,10 @@
             <div class="nav navbar-nav ml-auto">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="php/login.php">
-                            <span class="material-icons">account_circle</span> Login </a>
+                        <button style="background-color: #FFD700" type="button" class="btn" data-toggle="modal" data-target="#ModalLogin">
+                            <span class="material-icons">account_circle</span>
+                            Login
+                        </button>
                     </li>
                 </ul>
             </div>

@@ -1,11 +1,3 @@
-<?php
-    session_start();
-
-    if(!isset($_SESSION['login'])){
-        $_SESSION['login']=0;
-        session_destroy();
-    }
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,13 +13,7 @@
 <body>
     <!-- Menu -->
     <?php
-        if($_SESSION['login']==1){
-            include "../inc/menuFIS.inc";
-        }else if($_SESSION['login']==2){
-            include "../inc/menuJUR.inc";
-        }else{
-            include "../inc/menu.inc";
-        }
+        include "../inc/menu.inc";
     ?>
 
     <?php
@@ -45,7 +31,7 @@
     <div class = "row">
         <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
             <h2 style="font-family:consolas;" class="h2_cad">Cadastre-se</h2>
-            <form class="form" action = "salvar_cliente.php" method = "POST">
+            <form class="form formCliente" action = "salvar_cliente.php" method = "POST">
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
                         <label style="padding-top:5%"> Nome: </label>

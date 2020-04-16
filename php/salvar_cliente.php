@@ -1,16 +1,8 @@
-<?php
-    session_start();
-
-    if(!isset($_SESSION['login'])){
-        $_SESSION['login']=0;
-        session_destroy();
-    }
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Projeto</title>
+        <title> Cadastro </title>
         <link rel="shortcut icon" href="../images/logo.png" >
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
         <script src="main.js"></script>
@@ -21,13 +13,7 @@
     <body>
         <!-- Menu -->
         <?php
-            if($_SESSION['login']==1){
-                include "../inc/menuFIS.inc";
-            }else if($_SESSION['login']==2){
-                include "..inc/menuJUR.inc";
-            }else{
-                include "../inc/menu.inc";
-            }
+            include "../inc/menu.inc";
         ?>
 
         <?php
