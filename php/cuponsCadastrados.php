@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION["cliente"])){
+    if($_SESSION["tabela"]!='cliente'){
         session_destroy();
-        header('location: ../index.php');
+        header("location: ../index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -31,28 +31,38 @@
         </div>
         <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
             <?php
-                if(file_exists("cupons.xml")){
-                    $preco=0;
-                    $xml = simplexml_load_file("cupons.xml");
-                    foreach($xml->children() as $cupons){
-                        $preco=$cupons->valor - ($cupons->valor * ($cupons->desconto/100));
+                include "conexao_pdo.php";
 
-                        echo' <div class="card mb-3" style="max-width: 1000px;">
-                        <div class="row no-gutters">
-                          <div class="col-md-4">
-                            <img src="../images/teste.jpg" class="card-img" width="100%" height="100%" >
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">'.$cupons->titulo.'</h5>
-                              <h5 class="card-title">R$'.$preco.'</h5>
-                              <p class="card-text ">'.$cupons->descricao.'</p>
-                              <a href="#"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Comprar</a>
+                $sth = $link->prepare('SELECT *
+                    FROM cupom
+                    ORDER BY titulo');
+
+                $sth->execute();
+
+                if($sth->rowCount()){
+                    $preco=0;
+
+                    while($linha=$sth->fetch()){
+                        $preco = $linha['valor'] - ($linha['valor'] * ($linha['desconto']/100));
+
+                        echo'
+                            <div class="card mb-3" style="max-width: 1000px;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">'.$linha['titulo'].'</h5>
+                                            <h5 class="card-title">R$'.$preco.'</h5>
+                                            <p class="card-text ">'.$linha['descricao'].'</p>
+                                            <a href="#"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Comprar</a>
+                                        </div>
+                                    </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                        <br/>';
+                          <br/>
+                        ';
                     }
                 }else{
                     echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';

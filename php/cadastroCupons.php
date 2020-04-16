@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION["empresa"])){
+    if($_SESSION["tabela"]!='empresa'){
         session_destroy();
-        header('Location: ../index.php');
+        header("location: ../index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -20,13 +20,7 @@
 
         <!-- Menu -->
         <?php
-            if($_SESSION["cliente"]==true){
-                include "../inc/menuFIS.inc";
-            }else if($_SESSION["empresa"]==true){
-                include "../inc/menuJUR.inc";
-            }else{
-                include "../inc/menu.inc";
-            }
+            include "../inc/menuJUR.inc";
         ?>
 
         <!-- Conteúdo -->
@@ -34,30 +28,40 @@
                 if(empty($_POST)){
                     include "../inc/form_cupon.inc";
                 }else{
-                    if(!file_exists("cupon.xml")){
-                        cadastrarCupon();
-                    }
-                    else{
-                        if(conferirCupon()){
-                            cadastrarCupon();
+                    include "conexao_pdo.php";
 
-                        }else{
-                            echo "<section>
-                                        <h2 class=\"text-center\">Cupom já cadastrado. <br><b><a href=\"cadastroCupons.php\">Cadastre um novo Cupom.</a></b></h2>
-                                    </section>";
-                        }
-                    }
+                    $imagem=@date('Ymdhis') . md5($_FILES['imagemCupom']['name']) . '.' . substr($_FILES['imagemCupom']['name'], '-3');
+
+                    $destino = '../imgCupom/' . $imagem;
+
+                    $arquivo_tmp = $_FILES['imagemCupom']['tmp_name'];
+
+                    move_uploaded_file( $arquivo_tmp, $destino  );
+
+                    $titulo= $_POST["titulo"];
+                    $descricao= $_POST["descricao"];
+                    $valor=$_POST["valor"];
+                    $desconto=$_POST["desconto"];
+
+
+
+                    $sth = $link->prepare('INSERT into cupom (titulo, descricao, valor, desconto, imagemcupom) values (:titulo, :descricao, :valor, :desconto, :imagemcupom)');
+
+                    $sth->bindValue(':titulo', $titulo, PDO::PARAM_INT);
+                    $sth->bindValue(':descricao', $descricao, PDO::PARAM_STR);
+                    $sth->bindValue(':valor', $valor, PDO::PARAM_STR);
+                    $sth->bindValue(':desconto', $desconto, PDO::PARAM_STR);
+                    $sth->bindValue(':imagemcupom', $imagem, PDO::PARAM_STR);
+                    $sth->execute();
+
                 }
             ?>
+
         <!-- Rodapé -->
         <?php
             include "../inc/rodape.inc";
 
             include "../inc/ModalContato.inc";
-        ?>
-
-        <?php
-            include "../inc/funcoes.inc";
         ?>
         <script src="../js/jquery-3.2.1.min.js"></script>
         <script src="../js/popper.min.js"></script>

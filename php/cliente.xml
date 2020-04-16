@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<clientes>
-    <cliente>
-        <nome>Renan</nome>
-        <cpf>536.099.778-84</cpf>
-        <email>renan2204@outlook.com</email>
-        <senha>123</senha>
-    </cliente>
-</clientes>

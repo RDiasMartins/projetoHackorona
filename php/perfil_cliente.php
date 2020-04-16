@@ -1,7 +1,8 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION["cliente"])){
+    if($_SESSION["tabela"]!='cliente'){
+        session_destroy();
         header("location: ../index.php");
     }
 ?>

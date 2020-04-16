@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
-        <a class="navbar-brand" href="index.php">Projeto</a>
+        <a class="navbar-brand" href="#">Projeto</a>
         <button class="navbar-toggler" type="button" datatoggle="collapse" data-target="#navbarCollapse" ariacontrols="navbarCollapse" aria-expanded="false" aria-label="Togglenavigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,6 +8,9 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="../php/homeUsuario.php">Painel de controle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../php/cuponsCadastrados.php">Cupons</a>
                 </li>
             </ul>
         </div>

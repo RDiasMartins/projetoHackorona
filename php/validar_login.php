@@ -13,42 +13,43 @@
     </head>
     <body>
         <?php
-            $_SESSION["Email"] = $_POST["EmailLogin"];
-            $_SESSION["Senha"] = $_POST["SenhaLogin"];
-            $_SESSION["checkLogin"]=$_POST["checkLogin"];
+            include "conexao_pdo.php";
 
-            $EmailLogar = $_SESSION["Email"];
-            $SenhaLogar = $_SESSION["Senha"];
+            $EmailLogar = $_POST["EmailLogin"];
+            $SenhaLogar = $_POST["SenhaLogin"];
 
-            $clientes=simplexml_load_file("cliente.xml");
-            $empresas=simplexml_load_file("empresas.xml");
+            $checkLogin = $_POST["checkLogin"];
 
-            if($_SESSION["checkLogin"]==1){
-                foreach($clientes->children() as $cliente){
-                    if(($EmailLogar==$cliente->email)&&($SenhaLogar==$cliente->senha)){
-                        $aux=1;
-                        break;
-                    }
-                }
+            if($checkLogin==1){
+                $_SESSION["tabela"]='cliente';
+                $coluna='cpf';
+
             }else{
-                foreach($empresas->children() as $proprietario){
-                    if(($EmailLogar==$proprietario->email)&&($SenhaLogar==$proprietario->senha)){
-                        $aux=2;
-                        break;
-                    }
-                }
+                $_SESSION["tabela"]='empresa';
+                $coluna='cnpj';
             }
 
-            if($aux==1){
-                $_SESSION["cliente"]=true;
-                header ("Location: homeUsuario.php");
-            }else if($aux==2){
-                $_SESSION["empresa"]=true;
-                header ("Location: homeEmpresa.php");
+            $sth = $link->prepare('SELECT cpf
+                FROM cliente
+                WHERE email =:email and senha=:senha');
+            $sth->bindValue(':email', $EmailLogar, PDO::PARAM_INT);
+            $sth->bindValue(':senha', $SenhaLogar, PDO::PARAM_STR);
+            $sth->execute();
+
+            $linha=$sth->fetch();
+
+            if($linha){
+                $_SESSION[$tabela]=$linha[$coluna];
+
+                if($_SESSION["tabela"]=='cliente'){
+                    header('Location: homeUsuario.php');
+                }else{
+                    header('Location: homeEmpresa.php');
+                }
             }else{
         ?>
         <script>
-            window.location.href="../index.php";
+            window.location.href= "../index.php";
             window.alert("Usuário inválido!");
         </script>
         <?php

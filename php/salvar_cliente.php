@@ -17,29 +17,25 @@
         ?>
 
         <?php
-            include "../inc/funcoes.inc";
             session_start();
+
+            include "conexao_pdo.php";
+
             $nome=$_POST["nome"];
+            $cpf=$_POST["cpf"];
             $email=$_POST["email"];
             $senha=$_POST["senha"];
-            if(file_exists("cliente.xml")){
-                $xml=simplexml_load_file("cliente.xml");
-                $achou = false;
-                foreach($xml->children() as $cliente){
-                    if($email == $cliente->email){
-                        $achou = true;
-                        break;
-                    }
-                }
-                if($achou){
-                    $_SESSION["conf_email"]=false;
-                    header("Location:cadastro_cliente.php");
-                }else{
-                   cadastrar_cliente();
-                }
-            }else{
-                cadastrar_cliente();
-            }
+
+
+            $sth = $link->prepare('INSERT into cliente (nome, cpf, email, senha) values (:nome, :cpf, :email, :senha)');
+
+            $sth->bindValue(':nome', $nome, PDO::PARAM_INT);
+            $sth->bindValue(':cpf', $cpf, PDO::PARAM_STR);
+            $sth->bindValue(':email', $email, PDO::PARAM_STR);
+            $sth->bindValue(':senha', $senha, PDO::PARAM_STR);
+            $sth->execute();
+
+            header('Location: ../index.php');
         ?>
 
         <!-- Rodapé -->

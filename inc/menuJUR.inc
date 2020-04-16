@@ -9,6 +9,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="../php/homeEmpresa.php">Painel de controle</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../php/homeEmpresa.php">Cadastrar cupom</a>
+                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
