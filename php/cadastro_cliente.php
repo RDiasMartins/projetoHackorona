@@ -29,6 +29,12 @@
         }
     ?>
     <div class = "row">
+        <div class = "col-lg-2 offset-lg-9" style="position:absolute; margin-top:6%; text-align:center; background-color: #F5F5F5; border: 1px solid silver;">
+            <p> Tem um estabelecimento e quer fazer negócio conosco? <br/><b>Cadastre-se aqui:</b></p>
+            <a type="button" class="btn btn-primary" href="cadastro_empresa.php" style="margin-bottom:12px;">Aqui</a>
+        </div>
+    </div>
+    <div class = "row">
         <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
             <h2 style="font-family:consolas;" class="h2_cad">Cadastre-se</h2>
             <form class="form formCliente" action = "salvar_cliente.php" method = "POST">

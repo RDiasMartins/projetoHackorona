@@ -25,6 +25,14 @@
         ?>
 
         <!-- Conteúdo -->
+        <?php
+            include "conexao_pdo.php";
+
+            session_start();
+            $_SESSION["tabela"]='cliente';
+            $cpf=$_SESSION["cpf"];
+        ?>
+
         <nav style="margin-top:50px;">
             <p style="padding-left:10%"><img src="../images/perfil.png" width="60px" height="60px" style="position:absolute;"></p>
             <h3 style="padding-left:30%;"> Nome </h3>
@@ -37,7 +45,7 @@
                         <li class="contentnode">
                             <dl>
                                 <dt> CPF </dt>
-                                <dd>Número do cpf</dd>
+                                <dd><?php $cpf ?></dd>
                             </dl>
                         </li>
                         <br/>
