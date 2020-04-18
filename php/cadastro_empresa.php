@@ -13,7 +13,7 @@
 <body>
     <!-- Menu -->
     <?php
-        include "../inc/menu.inc";
+        include "../inc/menu_cadastro.inc";
     ?>
 
     <?php
@@ -52,7 +52,7 @@
                 </div>
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label for="categoria" style="padding-top:5%"> Categoria: </label>  
+                        <label for="categoria" style="padding-top:5%"> Categoria: </label>
                         <select name="categoria" id="categoria" class="form-control select" required="required">
                             <option value="beleza_saude">Beleza/Saúde</option>
                             <option value="comercio">Comércio</option>
@@ -77,7 +77,7 @@
                 </div>
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label for="estado" style="padding-top:5%"> Estado: </label>  
+                        <label for="estado" style="padding-top:5%"> Estado: </label>
                         <select name="estado" id="estado" class="form-control select" required="required">
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
@@ -173,7 +173,7 @@
             </form>
         </div>
     </div>
- 
+
     <!-- Rodapé -->
     <?php
         include "../inc/rodape.inc";

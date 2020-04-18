@@ -43,7 +43,7 @@
             $linha=$sth->fetch();
 
             if($linha){
-                $_SESSION[$tabela]=$linha[$coluna];
+                $_SESSION["cpf"]=$linha[$coluna];
 
                 if($_SESSION["tabela"]=='cliente'){
                     header('Location: homeUsuario.php');

@@ -13,7 +13,7 @@
 <body>
     <!-- Menu -->
     <?php
-        include "../inc/menu.inc";
+        include "../inc/menu_cadastro.inc";
     ?>
 
     <?php
@@ -78,7 +78,6 @@
     <!-- Rodapé -->
     <?php
         include "../inc/rodape.inc";
-
         include "../inc/ModalContato.inc";
     ?>
     <script src="../js/jquery-3.2.1.min.js"></script>
