@@ -35,7 +35,7 @@
             $sth->bindValue(':email', $EmailLogar, PDO::PARAM_INT);
             $sth->bindValue(':senha', $SenhaLogar, PDO::PARAM_STR);
             $sth->execute();
-            
+
             $_SESSION["cpf"] = $link->prepare('SELECT cpf
                 FROM cliente
                 WHERE email =:email and senha=:senha');

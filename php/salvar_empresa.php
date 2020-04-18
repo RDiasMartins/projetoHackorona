@@ -22,7 +22,7 @@
             include "conexao_pdo.php";
 
             $razao_social=$_POST["razao_social"];
-            $nomef=$_POST["nomef"];
+            $nome_fantasia=$_POST["nome_fantasia"];
             $cnpj=$_POST["cnpj"];
             $categoria=$_POST["categoria"];
             $cep=$_POST["cep"];
@@ -37,8 +37,8 @@
             $senha=$_POST["senha"];
 
 
-            $sth = $link->prepare('INSERT into empresa (razao_social, nomef, cnpj, categoria, cep, estado, cidade, bairro, rua, numero, nome, cpf, email, senha) 
-            values (:razao_social, :nomef, :cnpj, :categoria, :cep, :estado, :cidade, :bairro, :rua, :numero, :nome, :cpf, :email, :senha)');
+            $sth = $link->prepare('INSERT into empresa (razao_social, nome_fantasia, cnpj, categoria, cep, estado, cidade, bairro, rua, numero, nome, cpf, email, senha)
+            values (:razao_social, :nome_fantasia, :cnpj, :categoria, :cep, :estado, :cidade, :bairro, :rua, :numero, :nome, :cpf, :email, :senha)');
 
             $sth->bindValue(':razao_zocial', $razao_zocial, PDO::PARAM_STR);
             $sth->bindValue(':nomef', $nomef, PDO::PARAM_STR);
