@@ -41,7 +41,7 @@
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
                         <label style="padding-top:5%"> Nome Fantasia: </label>
-                        <input type="text" name="nomef" id="nomef" class="form-control" required="required"/>
+                        <input type="text" name="nome_fantasia" id="nome_fantasia" class="form-control" required="required"/>
                     </div>
                 </div>
                 <div class = "row">
@@ -51,9 +51,9 @@
                     </div>
                 </div>
                 <div class = "row">
-                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                    <div class = "col-lg-7 offset-lg-2  col-sm-8 offset-sm-1">
                         <label for="categoria" style="padding-top:5%"> Categoria: </label>
-                        <select name="categoria" id="categoria" class="form-control select" required="required">
+                        <select name="categoria" id="categoria" class="form-control">
                             <option value="beleza_saude">Beleza/Saúde</option>
                             <option value="comercio">Comércio</option>
                             <option value="gastronomia">Gastronomia</option>
@@ -65,7 +65,7 @@
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
                         <label style="padding-top:5%"> Telefone: </label>
-                        <input type="tel" name="telefone" id="telefone" class="form-control" required="required" placeholder="(00)0000-0000"/>
+                        <input type="tel" name="telefone" id="telefone" class="form-control phone" required="required"/>
                     </div>
                 </div>
                 <p style="padding:30px 0px 0px 15px; font-size:17px;">Endereço</p>
@@ -78,7 +78,7 @@
                 <div class = "row">
                     <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
                         <label for="estado" style="padding-top:5%"> Estado: </label>
-                        <select name="estado" id="estado" class="form-control select" required="required">
+                        <select name="estado" id="estado" class="form-control">
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>

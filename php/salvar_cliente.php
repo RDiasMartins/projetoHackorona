@@ -27,7 +27,8 @@
             $senha=$_POST["senha"];
 
 
-            $sth = $link->prepare('INSERT into cliente (nome, cpf, email, senha) values (:nome, :cpf, :email, :senha)');
+            $sth = $link->prepare('INSERT into cliente (nome, cpf, email, senha)
+            values (:nome, :cpf, :email, :senha)');
 
             $sth->bindValue(':nome', $nome, PDO::PARAM_INT);
             $sth->bindValue(':cpf', $cpf, PDO::PARAM_STR);

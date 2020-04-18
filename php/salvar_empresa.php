@@ -25,6 +25,7 @@
             $nome_fantasia=$_POST["nome_fantasia"];
             $cnpj=$_POST["cnpj"];
             $categoria=$_POST["categoria"];
+            $telefone=$_POST["telefone"];
             $cep=$_POST["cep"];
             $estado=$_POST["estado"];
             $cidade=$_POST["cidade"];
@@ -37,13 +38,14 @@
             $senha=$_POST["senha"];
 
 
-            $sth = $link->prepare('INSERT into empresa (razao_social, nome_fantasia, cnpj, categoria, cep, estado, cidade, bairro, rua, numero, nome, cpf, email, senha)
-            values (:razao_social, :nome_fantasia, :cnpj, :categoria, :cep, :estado, :cidade, :bairro, :rua, :numero, :nome, :cpf, :email, :senha)');
+            $sth = $link->prepare('INSERT into empresa (razao_social, nome_fantasia, cnpj, categoria, telefone, cep, estado, cidade, bairro, rua, numero, nome, cpf, email, senha)
+            values (:razao_social, :nome_fantasia, :cnpj, :categoria, :telefone, :cep, :estado, :cidade, :bairro, :rua, :numero, :nome, :cpf, :email, :senha)');
 
-            $sth->bindValue(':razao_zocial', $razao_zocial, PDO::PARAM_STR);
-            $sth->bindValue(':nomef', $nomef, PDO::PARAM_STR);
+            $sth->bindValue(':razao_social', $razao_social, PDO::PARAM_STR);
+            $sth->bindValue(':nome_fantasia', $nome_fantasia, PDO::PARAM_STR);
             $sth->bindValue(':cnpj', $cnpj, PDO::PARAM_INT);
             $sth->bindValue(':categoria', $categoria, PDO::PARAM_STR);
+            $sth->bindValue(':telefone', $telefone, PDO::PARAM_INT);
             $sth->bindValue(':cep', $cep, PDO::PARAM_INT);
             $sth->bindValue(':estado', $estado, PDO::PARAM_STR);
             $sth->bindValue(':cidade', $cidade, PDO::PARAM_STR);

@@ -29,8 +29,8 @@
             include "conexao_pdo.php";
 
             session_start();
-            $_SESSION["tabela"]='cliente';
             $cpf=$_SESSION["cpf"];
+            die ($cpf);
         ?>
 
         <nav style="margin-top:50px;">
