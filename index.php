@@ -1,13 +1,18 @@
 <?php
     session_start();
 
-    if(isset($_SESSION["cliente"])){
-        header('Location: php/homeUsuario.php');
+    if(isset($_SESSION["tabela"])){
+        if($_SESSION["tabela"]=='cliente'){
+            header('Location: php/homeUsuario.php');
+        }else{
+            header('Location: php/homeEmpresa.php');
+        }
+    }else{
+        session_destroy();
     }
 
-    if(isset($_SESSION["empresa"])){
-        header('Location: php/homeEmpresa.php');
-    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -26,7 +31,7 @@
         <?php
             include "inc/menu.inc";
         ?>
-
+        <br/> <br/>
         <!--Carrossel index-->
         <?php
                 include "inc/carrossel.inc";
@@ -63,7 +68,7 @@
             include "inc/ModalLogin.inc";
 
         ?>
-        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </body>

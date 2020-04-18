@@ -6,10 +6,6 @@
     <head>
     <meta charset="utf-8" />
         <title> Validação de login </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="../css/login.css" />
-        <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet"/>
     </head>
     <body>
         <?php
@@ -22,35 +18,48 @@
 
             if($checkLogin==1){
                 $_SESSION["tabela"]='cliente';
-                $coluna='cpf';
+                $colunaCPF='cpf';
+                $colunaEmail='email';
+                $colunaNome='nome';
+
+                $sth = $link->prepare('SELECT cpf, email, nome
+                    FROM cliente
+                    WHERE email =:email and senha=:senha');
+                $sth->bindValue(':email', $EmailLogar, PDO::PARAM_STR);
+                $sth->bindValue(':senha', $SenhaLogar, PDO::PARAM_STR);
+                $sth->execute();
 
             }else{
                 $_SESSION["tabela"]='empresa';
-                $coluna='cnpj';
+                $colunaCNPJ='cnpj';
+                $colunaEmail='email';
+                $colunaNome='nome';
+
+                $sth = $link->prepare('SELECT cnpj, cpf, email, nome
+                    FROM empresa
+                    WHERE email =:email and senha=:senha');
+                $sth->bindValue(':email', $EmailLogar, PDO::PARAM_STR);
+                $sth->bindValue(':senha', $SenhaLogar, PDO::PARAM_STR);
+                $sth->execute();
+
             }
-
-            $sth = $link->prepare('SELECT cpf
-                FROM cliente
-                WHERE email =:email and senha=:senha');
-            $sth->bindValue(':email', $EmailLogar, PDO::PARAM_INT);
-            $sth->bindValue(':senha', $SenhaLogar, PDO::PARAM_STR);
-            $sth->execute();
-
-            $_SESSION["cpf"] = $link->prepare('SELECT cpf
-                FROM cliente
-                WHERE email =:email and senha=:senha');
 
             $linha=$sth->fetch();
 
             if($linha){
-                $_SESSION["cpf"]=$linha[$coluna];
+                $_SESSION["cnpj"]=$linha[$colunaCNPJ];
+                $_SESSION["cpf"]=$linha[$colunaCPF];
+                $_SESSION["EmailLogado"]=$linha[$colunaEmail];
+                $_SESSION["NomeLogado"]=$linha[$colunaNome];
 
                 if($_SESSION["tabela"]=='cliente'){
                     header('Location: homeUsuario.php');
+
                 }else{
                     header('Location: homeEmpresa.php');
                 }
             }else{
+                session_destroy();
         ?>
         <script>
             window.location.href= "../index.php";
@@ -60,9 +69,5 @@
             }
 
         ?>
-        <script src="../js/jquery-3.2.1.min.js"></script>
-        <script src="../js/popper.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/validaform.min.js"> </script>
     </body>
 </html>

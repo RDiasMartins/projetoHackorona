@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projeto</title>
+    <title> Cadastro - Cliente </title>
     <link rel="shortcut icon" href="../images/logo.png" >
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/estilo.min.css" />
@@ -15,6 +15,7 @@
     <?php
         include "../inc/menu_cadastro.inc";
     ?>
+    <br/> <br/>
 
     <?php
         if(isset($_SESSION["conf_email"])){
@@ -80,10 +81,9 @@
         include "../inc/rodape.inc";
         include "../inc/ModalContato.inc";
     ?>
-    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/validaform.min.js"></script>
-    <script src="../js/validarForm.js"></script>
 </body>
 </html>

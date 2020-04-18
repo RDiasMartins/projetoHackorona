@@ -10,7 +10,7 @@
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
-        <title> Página inicial </title>
+        <title> Cliente - Perfil </title>
         <link rel="shortcut icon" href="../images/logo.png" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
@@ -18,75 +18,87 @@
         <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet"/>
     </head>
     <body>
-
-        <!-- Menu -->
-        <?php
-            include "../inc/menuFIS.inc";
-        ?>
-
-        <!-- Conteúdo -->
         <?php
             include "conexao_pdo.php";
 
-            session_start();
             $cpf=$_SESSION["cpf"];
-            die ($cpf);
+            $email=$_SESSION["EmailLogado"];
+            $nome=$_SESSION["NomeLogado"];
         ?>
 
-        <nav style="margin-top:50px;">
-            <p style="padding-left:10%"><img src="../images/perfil.png" width="60px" height="60px" style="position:absolute;"></p>
-            <h3 style="padding-left:30%;"> Nome </h3>
-        </nav>
-        <div class = "row pb-3" style=" width:80%; margin-left:10%">
-            <div class = "col-lg-8 offset-lg-2">
-                <section class="node_category" style="margin-top:10%; border: 1px solid silver;">
-                <br/>
-                    <ul style="list-style-type: none; padding-top:0%;">
-                        <li class="contentnode">
-                            <dl>
-                                <dt> CPF </dt>
-                                <dd><?php $cpf ?></dd>
-                            </dl>
-                        </li>
-                        <br/>
-                        <li>
-                            <dl>
-                                <dt> E-mail </dt>
-                                <dd>Endereço de email</dd>
-                            </dl>
-                        </li>
-                    </ul>
-                    <br/>
-                </section>
-            </div>
-        </div>
-        <div class = "row pb-3" style=" width:80%; margin-left:10%">
-            <div class = "col-lg-8 offset-lg-2">
-                <div class="page-content" style=" border: 1px solid silver;">
-                <br/>
-                    <ul style="list-style-type: none; padding-top:0%;">
-                        <li class="contentnode">
-                            <dl>
-                                <dt> Seus cupons </dt>
-                                <dd>Cupom 1</dd>
-                                <dd>Cupom 2</dd>
-                                <dd>Cupom 3</dd>
-                            </dl>
-                        </li>
-                        <br/>
-                    </ul>
+        <!--Menu-->
+        <div class="d-flex" id="wrapper">
+            <?php
+                include "../inc/painelFIS.inc";
+            ?>
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
+                        <span class="navbar-toggler-icon"></span>
+                        Painel
+                    </button>
+                </nav>
+
+                <!--Cointeúdo-->
+                <div class="container-fluid">
+                    <nav style="margin-top:50px;">
+                        <p style="padding-left:25%"><img src="../images/perfil.png" width="60px" height="60px"></p>
+                        <h3 style="padding-left:25%;"> <?php echo"$nome"; ?> </h3>
+                    </nav>
+                    <div class = "row pb-3" style=" width:80%; margin-left:10%">
+                        <div class = "col-lg-8 offset-lg-2">
+                            <section class="node_category" style="border: 1px solid silver;">
+                            <br/>
+                                <ul style="list-style-type: none; padding-top:0%;">
+                                    <li class="contentnode">
+                                        <dl>
+                                            <dt> CPF </dt>
+                                            <dd><?php echo"$cpf"; ?></dd>
+                                        </dl>
+                                    </li>
+                                    <br/>
+                                    <li>
+                                        <dl>
+                                            <dt> E-mail </dt>
+                                            <dd><?php echo"$email" ?></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                                <br/>
+                            </section>
+                        </div>
+                    </div>
+                    <div class = "row pb-3" style=" width:80%; margin-left:10%">
+                        <div class = "col-lg-8 offset-lg-2">
+                            <div class="page-content" style=" border: 1px solid silver;">
+                            <br/>
+                                <ul style="list-style-type: none; padding-top:0%;">
+                                    <li class="contentnode">
+                                        <dl>
+                                            <dt> Seus cupons </dt>
+                                            <dd>Cupom 1</dd>
+                                            <dd>Cupom 2</dd>
+                                            <dd>Cupom 3</dd>
+                                        </dl>
+                                    </li>
+                                    <br/>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Rodapé -->
-        <?php
-            include "../inc/rodape.inc";
-            include "../inc/ModalContato.inc";
-
-        ?>
-        <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
+
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
     </body>
 </html>
