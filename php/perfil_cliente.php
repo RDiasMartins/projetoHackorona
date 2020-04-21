@@ -20,6 +20,10 @@
     <body>
         <?php
             include "conexao_pdo.php";
+
+            $cpf=$_SESSION["cpf"];
+            $email=$_SESSION["EmailLogado"];
+            $nome=$_SESSION["NomeLogado"];
         ?>
 
         <!--Menu-->
@@ -39,7 +43,7 @@
                 <div class="container-fluid">
                     <nav style="margin-top:50px;">
                         <p style="padding-left:25%"><img src="../images/perfil.png" width="60px" height="60px"></p>
-                        <h3 style="padding-left:25%;"> <?php echo"$_SESSION['NomeLogado']"; ?> </h3>
+                        <h3 style="padding-left:25%;"> <?php echo"$nome"; ?> </h3>
                     </nav>
                     <div class = "row pb-3" style=" width:80%; margin-left:10%">
                         <div class = "col-lg-8 offset-lg-2">
@@ -49,14 +53,14 @@
                                     <li class="contentnode">
                                         <dl>
                                             <dt> CPF </dt>
-                                            <dd><?php echo"$_SESSION['cpf']"; ?></dd>
+                                            <dd><?php echo"$cpf"; ?></dd>
                                         </dl>
                                     </li>
                                     <br/>
                                     <li>
                                         <dl>
                                             <dt> E-mail </dt>
-                                            <dd><?php echo"$_SESSION['NomeLogado']"; ?></dd>
+                                            <dd><?php echo"$email" ?></dd>
                                         </dl>
                                     </li>
                                 </ul>
