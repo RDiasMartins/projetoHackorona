@@ -1,4 +1,5 @@
 <?php
+
     /*
     try {
       $link = new PDO('mysql:host=localhost:3307;dbname=projeto', 'root', 'usbw');
@@ -8,13 +9,14 @@
     }
     */
 
+
     $user = "bsts_projeto";
     $pass = "123proj456!";
     $db = "bsts_projeto";
 
     //$link = mysqli_connect("pluto.ignitionserver.net:3306", $user, $pass, $db);
     //uranus.ignitionserver.net
-    
+
     $link = new PDO("mysql:host=pluto.ignitionserver.net:3306;dbname=$db", $user, $pass);
 
 ?>
