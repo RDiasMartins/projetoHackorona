@@ -21,7 +21,7 @@
         <!-- Menu -->
         <div class="d-flex" id="wrapper">
             <?php
-                include "../inc/PainelFIS.inc";
+                include "../inc/PainelFIS.php";
             ?>
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">

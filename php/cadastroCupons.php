@@ -22,7 +22,7 @@
         <!-- Menu -->
         <div class="d-flex" id="wrapper">
             <?php
-                include "../inc/PainelJUR.inc";
+                include "../inc/PainelJUR.php";
             ?>
             <!-- Conteúdo -->
             <div id="page-content-wrapper">
