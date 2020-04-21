@@ -42,16 +42,17 @@
             }
 
             if($linha){
-                if(!$checkLogin!=1){
+                if($checkLogin==1){
+                    $_SESSION["cpf"]=$linha['cpf'];
+                    $_SESSION["EmailLogado"]=$linha['email'];
+                    $_SESSION["NomeLogado"]=$linha['nome'];
+
+                }
+                else{
                     $_SESSION["cnpj"]=$linha['cnpj'];
                     $_SESSION["EmailLogado"]=$linha['email'];
                     $_SESSION["nome_fantasia"]=$linha['nome_fantasia'];
                     $_SESSION["NomeProprietario"]=$linha['nome'];
-                }
-                else{
-                    $_SESSION["cpf"]=$linha['cpf'];
-                    $_SESSION["EmailLogado"]=$linha['email'];
-                    $_SESSION["NomeLogado"]=$linha['nome'];
                 }
 
                 if($_SESSION["tabela"]=='cliente'){
