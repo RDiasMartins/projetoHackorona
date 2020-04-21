@@ -16,7 +16,7 @@
         include "../inc/menu_cadastro.inc";
     ?>
     <br/> <br/>
-    
+
     <div class = "row">
         <div class = "col-lg-2 offset-lg-9" style="position:absolute; margin-top:6%; text-align:center; background-color: #F5F5F5; border: 1px solid silver;">
             <p> Tem um estabelecimento e quer fazer negócio conosco? <br/><b>Cadastre-se aqui:</b></p>

@@ -18,9 +18,6 @@
 
             if($checkLogin==1){
                 $_SESSION["tabela"]='cliente';
-                $colunaCPF='cpf';
-                $colunaEmail='email';
-                $colunaNome='nome';
 
                 $sth = $link->prepare('SELECT cpf, email, nome
                     FROM cliente
@@ -29,11 +26,10 @@
                 $sth->bindValue(':senha', $SenhaLogar, PDO::PARAM_STR);
                 $sth->execute();
 
+                $linha=$sth->fetch();
+
             }else{
                 $_SESSION["tabela"]='empresa';
-                $colunaCNPJ='cnpj';
-                $colunaEmail='email';
-                $colunaNome='nome';
 
                 $sth = $link->prepare('SELECT cnpj, cpf, email, nome
                     FROM empresa
@@ -42,15 +38,21 @@
                 $sth->bindValue(':senha', $SenhaLogar, PDO::PARAM_STR);
                 $sth->execute();
 
+                $linha=$sth->fetch();
             }
 
-            $linha=$sth->fetch();
-
             if($linha){
-                $_SESSION["cnpj"]=$linha[$colunaCNPJ];
-                $_SESSION["cpf"]=$linha[$colunaCPF];
-                $_SESSION["EmailLogado"]=$linha[$colunaEmail];
-                $_SESSION["NomeLogado"]=$linha[$colunaNome];
+                if(!$checkLogin!=1){
+                    $_SESSION["cnpj"]=$linha['cnpj'];
+                    $_SESSION["EmailLogado"]=$linha['email'];
+                    $_SESSION["nome_fantasia"]=$linha['nome_fantasia'];
+                    $_SESSION["NomeProprietario"]=$linha['nome'];
+                }
+                else{
+                    $_SESSION["cpf"]=$linha['cpf'];
+                    $_SESSION["EmailLogado"]=$linha['email'];
+                    $_SESSION["NomeLogado"]=$linha['nome'];
+                }
 
                 if($_SESSION["tabela"]=='cliente'){
                     header('Location: homeUsuario.php');
