@@ -26,7 +26,6 @@
             $email=$_POST["email"];
             $senha=$_POST["senha"];
 
-
             $sth = $link->prepare('INSERT into cliente (nome, cpf, email, senha)
             values (:nome, :cpf, :email, :senha)');
 

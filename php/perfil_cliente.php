@@ -29,8 +29,9 @@
         <!--Menu-->
         <div class="d-flex" id="wrapper">
             <?php
-                include "../inc/painelFIS.inc";
+                include "../inc/PainelFIS.php";
             ?>
+
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
@@ -39,7 +40,7 @@
                     </button>
                 </nav>
 
-                <!--Cointeúdo-->
+                <!--Conteúdo-->
                 <div class="container-fluid">
                     <nav style="margin-top:50px;">
                         <p style="padding-left:25%"><img src="../images/perfil.png" width="60px" height="60px"></p>
