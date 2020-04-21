@@ -13,7 +13,7 @@
            <span class="material-icons">shopping_cart</span>
            Loja
        </a>
-       <a style="color: black; background-color: #FFD700;" href="#" class="list-group-item list-group-item-action">
+       <a style="color: black; background-color: #FFD700;" href="meusCupons.php" class="list-group-item list-group-item-action">
            <span class="material-icons">payment</span>
            Meus Cupons
        </a>

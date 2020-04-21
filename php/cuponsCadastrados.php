@@ -28,7 +28,7 @@
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
-                        <span class="navbar-toggler-icon"></span> Painel </button>
+                        <span class="navbar-toggler-icon"></span></button>
                 </nav>
 
                 <div class="container-fluid" style="margin-top:1%; font-size: 1.125rem; text-anchor: middle;">
@@ -39,8 +39,10 @@
                                 </div>
                             </div>
                         <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
+
                                 <?php
-                                    include "conexao_pdo.php";
+                                    include "../inc/lojaCupons.inc";
+                                   /* include "conexao_pdo.php";
 
                                     $sth = $link->prepare('SELECT *
                                         FROM cupom
@@ -75,7 +77,7 @@
                                         }
                                     }else{
                                         echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
-                                    }
+                                    }*/
                                 ?>
                         </div>
                     </main>

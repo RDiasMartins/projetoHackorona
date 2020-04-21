@@ -56,9 +56,11 @@
                 }
 
                 if($_SESSION["tabela"]=='cliente'){
+                    $_SESSION["cliente"]=$EmailLogar;
                     header('Location: homeUsuario.php');
 
                 }else{
+                    $_SESSION["empresa"]=$EmailLogar;
                     header('Location: homeEmpresa.php');
                 }
             }else{

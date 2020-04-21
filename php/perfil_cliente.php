@@ -36,7 +36,6 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
                         <span class="navbar-toggler-icon"></span>
-                        Painel
                     </button>
                 </nav>
 
@@ -67,24 +66,6 @@
                                 </ul>
                                 <br/>
                             </section>
-                        </div>
-                    </div>
-                    <div class = "row pb-3" style=" width:80%; margin-left:10%">
-                        <div class = "col-lg-8 offset-lg-2">
-                            <div class="page-content" style=" border: 1px solid silver;">
-                            <br/>
-                                <ul style="list-style-type: none; padding-top:0%;">
-                                    <li class="contentnode">
-                                        <dl>
-                                            <dt> Seus cupons </dt>
-                                            <dd>Cupom 1</dd>
-                                            <dd>Cupom 2</dd>
-                                            <dd>Cupom 3</dd>
-                                        </dl>
-                                    </li>
-                                    <br/>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
