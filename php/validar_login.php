@@ -31,7 +31,7 @@
             }else{
                 $_SESSION["tabela"]='empresa';
 
-                $sth = $link->prepare('SELECT cnpj, cpf, email, nome
+                $sth = $link->prepare('SELECT nome_fantasia, cnpj, nome, cpf, email, cep, estado, cidade, bairro, rua, numero
                     FROM empresa
                     WHERE email =:email and senha=:senha');
                 $sth->bindValue(':email', $EmailLogar, PDO::PARAM_STR);
@@ -39,6 +39,9 @@
                 $sth->execute();
 
                 $linha=$sth->fetch();
+
+
+
             }
 
             if($linha){
@@ -50,9 +53,20 @@
                 }
                 else{
                     $_SESSION["cnpj"]=$linha['cnpj'];
+                    $_SESSION["cpf"]=$linha['cpf'];
                     $_SESSION["EmailLogado"]=$linha['email'];
                     $_SESSION["nome_fantasia"]=$linha['nome_fantasia'];
                     $_SESSION["NomeProprietario"]=$linha['nome'];
+
+                    $cep=$linha['cep'];
+                    $rua=$linha['rua'];
+                    $numero=$linha['numero'];
+                    $bairro=$linha['bairro'];
+                    $cidade=$linha['cidade'];
+                    $estado=$linha['estado'];
+
+                    $endereco=$cep."<br/>".$rua." ".$numero. " - ".$bairro."<br/>".$cidade. " - ". $estado;
+                    $_SESSION["endereco"]=$endereco;
                 }
 
                 if($_SESSION["tabela"]=='cliente'){

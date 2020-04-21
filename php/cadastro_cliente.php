@@ -23,46 +23,83 @@
             <a type="button" class="btn btn-primary" href="cadastro_empresa.php" style="margin-bottom:12px;">Aqui</a>
         </div>
     </div>
-    <div class = "row">
-        <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
-            <h2 style="font-family:consolas;" class="h2_cad">Cadastre-se</h2>
-            <form class="form formCliente" action = "salvar_cliente.php" method = "POST">
-                <div class = "row">
-                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label style="padding-top:5%"> Nome: </label>
-                        <input type="text" name="nome" id="nome" class="form-control" required="required"/>
-                    </div>
+
+    <?php
+        if(empty($_POST)){
+    ?>
+            <div class = "row">
+                <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
+                    <h2 style="font-family:consolas;" class="h2_cad">Cadastre-se</h2>
+                    <form class="form formCliente" action = "cadastro_cliente.php" method = "POST">
+                        <div class = "row">
+                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                                <label style="padding-top:5%"> Nome: </label>
+                                <input type="text" name="nome" id="nome" class="form-control" required="required"/>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                                <label style="padding-top:5%"> CPF: </label>
+                                <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required"/>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                                <label style="padding-top:5%"> Email: </label>
+                                <input type="email" name="email" id="email" class="form-control email" required="required"/>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                                <label style="padding-top:5%"> Senha: </label>
+                                <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
+                            </div>
+                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
+                                <label style="padding-top:5%"> Confirme a senha: </label>
+                                <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col offset-lg-6 offset-sm-5">
+                                <p style="padding-top:10px;"><button type="submit" class="btn btn-warning">Cadastrar</button></p>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class = "row">
-                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label style="padding-top:5%"> CPF: </label>
-                        <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required"/>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label style="padding-top:5%"> Email: </label>
-                        <input type="email" name="email" id="email" class="form-control email" required="required"/>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label style="padding-top:5%"> Senha: </label>
-                        <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
-                    </div>
-                    <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                        <label style="padding-top:5%"> Confirme a senha: </label>
-                        <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class = "col offset-lg-6 offset-sm-5">
-                        <p style="padding-top:10px;"><button type="submit" class="btn btn-warning">Cadastrar</button></p>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+            </div>
+    <?php
+        }
+        else{
+            session_start();
+
+            include "conexao_pdo.php";
+
+            $nome=$_POST["nome"];
+            $cpf=$_POST["cpf"];
+            $email=$_POST["email"];
+            $senha=$_POST["senha"];
+
+            $sth = $link->prepare("SELECT cpf from cliente WHERE email=:email");
+            $sth -> bindValue(":email", $email);
+
+            $sth -> execute();
+
+            if($sth->rowCount()>0){
+                //Fazer verificação de email cadastrado
+            }else{
+                $sth = $link->prepare('INSERT into cliente (nome, cpf, email, senha)
+                values (:nome, :cpf, :email, :senha)');
+
+                $sth->bindValue(':nome', $nome, PDO::PARAM_STR);
+                $sth->bindValue(':cpf', $cpf, PDO::PARAM_STR);
+                $sth->bindValue(':email', $email, PDO::PARAM_STR);
+                $sth->bindValue(':senha', $senha, PDO::PARAM_STR);
+                $sth->execute();
+
+                header('Location: ../index.php');
+            }
+        }
+    ?>
 
     <!-- Rodapé -->
     <?php
