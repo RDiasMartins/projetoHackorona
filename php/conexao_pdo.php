@@ -13,7 +13,8 @@
     $db = "bsts_projeto";
 
     //$link = mysqli_connect("pluto.ignitionserver.net:3306", $user, $pass, $db);
-
+    //uranus.ignitionserver.net
+    
     $link = new PDO("mysql:host=pluto.ignitionserver.net:3306;dbname=$db", $user, $pass);
 
 ?>
