@@ -17,56 +17,60 @@
     ?>
     <br/> <br/>
 
-    <div class = "row">
-        <div class = "col-lg-2 offset-lg-9" style="position:absolute; margin-top:6%; text-align:center; background-color: #F5F5F5; border: 1px solid silver;">
-            <p> Tem um estabelecimento e quer fazer negócio conosco? <br/><b>Cadastre-se aqui:</b></p>
-            <a type="button" class="btn btn-primary" href="cadastro_empresa.php" style="margin-bottom:12px;">Aqui</a>
-        </div>
+    <!-- Conteúdo -->
+
+    <div class="container-fluid" style="height:150px;">
+        <main role="main">
+            <div style="background-color: #333;" class="jumbotron">
+                <div style="color: white;"class="container">
+                    <h2 class="display-4 font-weight-normal" style="position:absolute; margin-top:-30px;">Cadastre-se</h2>
+                    <p style="position:absolute; margin-left:50%;">Cadastre sua empresa 
+                        <a class="navbar-brand" href="../php/cadastro_empresa.php">aqui</a> 
+                    </p>
+                </div>
+            </div> 
+        </main>
     </div>
 
     <?php
         if(empty($_POST)){
     ?>
-            <div class = "row">
-                <div class = "col-lg-4 offset-lg-4   col-sm-5 offset-sm-3">
-                    <h2 style="font-family:consolas;" class="h2_cad">Cadastre-se</h2>
-                    <form class="form formCliente" action = "cadastro_cliente.php" method = "POST">
-                        <div class = "row">
-                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                                <label style="padding-top:5%"> Nome: </label>
-                                <input type="text" name="nome" id="nome" class="form-control" required="required"/>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                                <label style="padding-top:5%"> CPF: </label>
-                                <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required"/>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                                <label style="padding-top:5%"> Email: </label>
-                                <input type="email" name="email" id="email" class="form-control email" required="required"/>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                                <label style="padding-top:5%"> Senha: </label>
-                                <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
-                            </div>
-                            <div class = "col-lg-7 offset-lg-2    col-sm-8 offset-sm-1">
-                                <label style="padding-top:5%"> Confirme a senha: </label>
-                                <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col offset-lg-6 offset-sm-5">
-                                <p style="padding-top:10px;"><button type="submit" class="btn btn-warning">Cadastrar</button></p>
-                            </div>
-                        </div>
-                    </form>
+        <form class="form formCliente" action = "cadastro_cliente.php" method = "POST" style="margin-left:3%;">
+            <div class = "row" style="width:100%;">
+                <div class = " form-group col-lg-4 offset-lg-1    col-sm-8 offset-sm-1" style="position:relative;">
+                    <label style="padding-top:5%"> Nome: </label>
+                    <input type="text" name="nome" id="nome" class="form-control" required="required;"/>
+                </div>
+                <div class = "form-group col-lg-4 offset-lg-1    col-sm-8 offset-sm-1"  style="position:relative;">
+                    <label style="padding-top:5%"> CPF: </label>
+                    <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required"/>
                 </div>
             </div>
+            <div class = "row" style="width:100%;">
+                <div class = "form-group col-lg-4 offset-lg-1   col-sm-8 offset-sm-1" style="position:relative;">
+                    <label style="padding-top:5%"> Email: </label>
+                    <input type="email" name="email" id="email" class="form-control email" required="required"/>
+                </div>
+                <div class = "form-group col-lg-2 offset-lg-1    col-sm-8 offset-sm-1" style="position:relative;">
+                    <label style="padding-top:10%"> Senha: </label>
+                    <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
+                </div>
+                <div class = "form-group col-lg-2 offset-lg-0    col-sm-8 offset-sm-1">
+                    <label style="padding-top:10%"> Confirme a senha: </label>
+                    <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
+                </div>
+            </div>
+            <div class = "row" style="width:100%;">
+                <div class = "col offset-lg-9 offset-sm-5">
+                    <p style="padding-top:40px; position:absolute;"><button type="submit" class="btn btn-warning">Cadastrar</button></p>
+                </div>
+            </div>
+        </form>
+    <!-- Rodapé -->    
+    <?php
+        include "../inc/rodape.inc";
+        include "../inc/ModalContato.inc";
+    ?>
     <?php
         }
         else{
@@ -99,12 +103,6 @@
                 header('Location: ../index.php');
             }
         }
-    ?>
-
-    <!-- Rodapé -->
-    <?php
-        include "../inc/rodape.inc";
-        include "../inc/ModalContato.inc";
     ?>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>

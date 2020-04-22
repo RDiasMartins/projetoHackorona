@@ -32,19 +32,10 @@ body{
     top: 0;
     left: 0;
     min-width: 100%;
-    height: 32rem;
+    height: 32rem; 
 }
 
 /* Formulário de cadastro de cliente*/
-.formCliente{
-    margin-bottom: 27%;
-    border: 1px solid #5a5a5a;
-    border-radius:5px;
-}
-.h2_cad{
-    padding-top: 10%;
-}
-
 .alert{
     background-color: #FFD700;
     color:black;
