@@ -36,6 +36,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
                         <span class="navbar-toggler-icon"></span>
+                        Painel
                     </button>
                 </nav>
 

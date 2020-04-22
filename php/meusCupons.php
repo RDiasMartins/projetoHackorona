@@ -28,18 +28,20 @@
                 else{
                     include "../inc/PainelJUR.php";
                 }
-                
+
             ?>
             <!-- Conteúdo -->
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
-                        <span class="navbar-toggler-icon"></span></button>
+                        <span class="navbar-toggler-icon"></span>
+                        Painel
+                    </button>
                 </nav>
                 <div class="container-fluid" style="margin-top:1%; font-size: 1.125rem; text-anchor: middle;">
                     <main role="main">
                         <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
-                        <?php 
+                        <?php
                             if($_SESSION["tabela"]=='cliente'){
                                 include "../inc/cuponsCliente.inc";
                             }
@@ -84,7 +86,7 @@
                                 }else{
                                     echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
                                 }*/
-                            ?> 
+                            ?>
                         </div>
                     </main>
                 </div>
