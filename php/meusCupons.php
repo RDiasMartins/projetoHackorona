@@ -28,18 +28,26 @@
                 else{
                     include "../inc/PainelJUR.php";
                 }
-                
+
             ?>
             <!-- Conteúdo -->
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
-                        <span class="navbar-toggler-icon"></span></button>
+                        <span class="navbar-toggler-icon"></span><!--Não há necessidade de escrever painel,os tres traços já deixa subentendido-->
+                    </button>
                 </nav>
+
                 <div class="container-fluid" style="margin-top:1%; font-size: 1.125rem; text-anchor: middle;">
+                    <div style="background-color: #333;" class="jumbotron">
+                        <div style="color: white;"class="container">
+                            <h1 class="display-3 text-bold font-weight-normal"> Inventário </h1>
+                            <p> Atenção aos prazos de validade! </p>
+                        </div>
+                    </div>
                     <main role="main">
                         <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
-                        <?php 
+                        <?php
                             if($_SESSION["tabela"]=='cliente'){
                                 include "../inc/cuponsCliente.inc";
                             }
@@ -84,7 +92,7 @@
                                 }else{
                                     echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
                                 }*/
-                            ?> 
+                            ?>
                         </div>
                     </main>
                 </div>

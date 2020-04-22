@@ -10,7 +10,7 @@
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
-        <title> Cadastro - Cupons </title>
+        <title> Loja - Cupons </title>
         <link rel="shortcut icon" href="../images/logo.png" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
@@ -28,7 +28,8 @@
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
-                        <span class="navbar-toggler-icon"></span></button>
+                        <span class="navbar-toggler-icon"></span><!--Não há necessidade de escrever painel,os tres traços já deixa subentendido-->
+                    </button>
                 </nav>
 
                 <div class="container-fluid" style="margin-top:1%; font-size: 1.125rem; text-anchor: middle;">
