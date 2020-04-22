@@ -28,8 +28,7 @@
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
-                        <span class="navbar-toggler-icon"></span>
-                        Painel
+                        <span class="navbar-toggler-icon"></span><!--Não há necessidade de escrever painel,os tres traços já deixa subentendido-->
                     </button>
                 </nav>
 
@@ -85,10 +84,6 @@
                     </main>
                 </div>
             </div>
-
-        <?php
-            include "../inc/funcoes.inc";
-        ?>
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>

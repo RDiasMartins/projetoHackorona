@@ -28,7 +28,7 @@
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button style="background-color:#FFDB58;" class="btn btn-md btn-warning" id="menu-toggle">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span><!--Não há necessidade de escrever painel,os tres traços já deixa subentendido-->
                         Painel
                     </button>
                 </nav>
