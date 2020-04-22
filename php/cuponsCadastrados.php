@@ -40,7 +40,7 @@
                                     <h1 class="display-3 text-bold font-weight-normal">Cupons</h1>
                                 </div>
                             </div>
-                        <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
+                        <div class="container aling-center" style="margin-rigth:2%;">
 
                                 <?php
                                     include "../inc/lojaCupons.inc";

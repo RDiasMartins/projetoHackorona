@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <main role="main">
-                        <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
+                        <div class="container align-center" style="margin-left:0;">
                         <?php
                             if($_SESSION["tabela"]=='cliente'){
                                 include "../inc/cuponsCliente.inc";

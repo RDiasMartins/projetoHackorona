@@ -19,7 +19,7 @@
        </a>
        <a style="color: black; background-color: #FFD700;" href="#" class="list-group-item list-group-item-action">
            <span class="material-icons">equalizer</span>
-           Estatísticas
+           Lucro
        </a>
        <a style="color: black; background-color: #FFD700;" href="logout.php" class="list-group-item list-group-item-action ">
            <span class="material-icons">person_outline</span>

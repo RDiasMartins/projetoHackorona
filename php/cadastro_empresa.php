@@ -1,3 +1,16 @@
+<?php
+// Include and instantiate the class.
+    require_once 'Mobile_Detect.php';
+    $detect = new Mobile_Detect;
+
+    if( $detect->isMobile()){
+        $dispositivo= "_mob";
+    }
+    else{
+    	$dispositivo= "";
+
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +34,7 @@
         <main role="main">
             <div style="background-color: #333;" class="jumbotron">
                 <div style="color: white;"class="container">
-                    <h2 class="display-3 text-bold font-weight-normal">Cadastro de empresa</h2>
+                    <h2 class="display-3 text-bold font-weight-normal titulo<?=$dispositivo;?>">Cadastro de empresa</h2>
                     <p class="float-right">Cadastro de cliente
                         <a class="btn btn-warning btn-sm" href="../php/cadastro_cliente.php">Aqui</a>
                     </p>

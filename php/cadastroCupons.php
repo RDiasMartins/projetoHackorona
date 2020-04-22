@@ -36,44 +36,46 @@
                 <div class="container-fluid" style="margin-top:1%; font-size: 1.125rem; text-anchor: middle;">
                     <main role="main">
                         <div style="background-color: #333;" class="jumbotron">
-                            <div style="color: white;"class="container">
-                                <h1 class="display-3 text-bold font-weight-normal">Cadastramento de cupons</h1>
+                            <div style="color: white;" class="container">
+                                <h1 class="display-3 text-bold font-weight-normal">Cadastro de cupons</h1>
                             </div>
                         </div>
-                        <?php
-                            if(empty($_POST)){
-                                include "../inc/form_cupon.inc";
-                            }else{
-                                include "conexao_pdo.php";
+                        <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
+                            <?php
+                                if(empty($_POST)){
+                                    include "../inc/form_cupon.inc";
+                                }else{
+                                    include "conexao_pdo.php";
 
-                                $imagem=@date('Ymdhis') . md5($_FILES['imagemCupom']['name']) . '.' . substr($_FILES['imagemCupom']['name'], '-3');
+                                    $imagem=@date('Ymdhis') . md5($_FILES['imagemCupom']['name']) . '.' . substr($_FILES['imagemCupom']['name'], '-3');
 
-                                $destino = '../imgCupom/' . $imagem;
+                                    $destino = '../imgCupom/' . $imagem;
 
-                                $arquivo_tmp = $_FILES['imagemCupom']['tmp_name'];
+                                    $arquivo_tmp = $_FILES['imagemCupom']['tmp_name'];
 
-                                move_uploaded_file( $arquivo_tmp, $destino  );
+                                    move_uploaded_file( $arquivo_tmp, $destino  );
 
-                                $titulo= $_POST["titulo"];
-                                $descricao= $_POST["descricao"];
-                                $valor=$_POST["valor"];
-                                $desconto=$_POST["desconto"];
+                                    $titulo= $_POST["titulo"];
+                                    $descricao= $_POST["descricao"];
+                                    $valor=$_POST["valor"];
+                                    $desconto=$_POST["desconto"];
 
 
 
-                                $sth = $link->prepare('INSERT into cupom (titulo, descricao, valor, desconto, imagemcupom) values (:titulo, :descricao, :valor, :desconto, :imagemcupom)');
+                                    $sth = $link->prepare('INSERT into cupom (titulo, descricao, valor, desconto, imagemcupom) values (:titulo, :descricao, :valor, :desconto, :imagemcupom)');
 
-                                $sth->bindValue(':titulo', $titulo, PDO::PARAM_INT);
-                                $sth->bindValue(':descricao', $descricao, PDO::PARAM_STR);
-                                $sth->bindValue(':valor', $valor, PDO::PARAM_STR);
-                                $sth->bindValue(':desconto', $desconto, PDO::PARAM_STR);
-                                $sth->bindValue(':imagemcupom', $imagem, PDO::PARAM_STR);
-                                $sth->execute();
+                                    $sth->bindValue(':titulo', $titulo, PDO::PARAM_INT);
+                                    $sth->bindValue(':descricao', $descricao, PDO::PARAM_STR);
+                                    $sth->bindValue(':valor', $valor, PDO::PARAM_STR);
+                                    $sth->bindValue(':desconto', $desconto, PDO::PARAM_STR);
+                                    $sth->bindValue(':imagemcupom', $imagem, PDO::PARAM_STR);
+                                    $sth->execute();
 
-                                header ('Location: cadastroCupons.php');
+                                    header ('Location: cadastroCupons.php');
 
-                            }
-                        ?>
+                                }
+                            ?>
+                        </div>
                     </main>
                 </div>
             </div>
