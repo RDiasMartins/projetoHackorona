@@ -91,3 +91,10 @@ body{
     margin-left: -15rem;
   }
 }
+.valor{
+      color:red;
+      text-decoration: line-through;
+}
+.novoValor{
+      color:green;
+}

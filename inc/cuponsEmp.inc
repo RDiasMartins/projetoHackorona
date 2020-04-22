@@ -5,7 +5,11 @@
             <img  src="../imgCupom/cupom6.jpg">
             <div class="card-body">
             <p class="card-text"><h5 class="card-title">Jantar para duas pessoas no restaurante Bom Gosto</h5></p>
-                <h5 class="card-title">R$100,00</h5>
+                <h4 class="card-title">Desconto: 20%</h4>
+                <div class="card-title">De:
+                    <h5 class="valor">R$100,00</h5>Por:
+                    <h5 class="novoValor">R$80,00</h5>
+                </div>
                 <p class="card-text ">Ganhe um super desconto em seu jantar</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -22,7 +26,11 @@
             <img  src="../imgCupom/cupom7.jpg">
             <div class="card-body">
             <p class="card-text"><h5 class="card-title">Almoce com a gente!!!</h5></p>
-                <h5 class="card-title">R$70,00</h5>
+                 <h4 class="card-title">Desconto: 10%</h4>
+                <div class="card-title">De:
+                    <h5 class="valor">R$70,00</h5>Por:
+                    <h5 class="novoValor">R$63,00</h5>
+                </div>                 
                 <p class="card-text ">Ganhe um super desconto em seu almoço e aproveite</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
