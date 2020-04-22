@@ -38,7 +38,14 @@
                         Painel
                     </button>
                 </nav>
+
                 <div class="container-fluid" style="margin-top:1%; font-size: 1.125rem; text-anchor: middle;">
+                    <div style="background-color: #333;" class="jumbotron">
+                        <div style="color: white;"class="container">
+                            <h1 class="display-3 text-bold font-weight-normal"> Inventário </h1>
+                            <p> Atenção aos prazos de validade! </p>
+                        </div>
+                    </div>
                     <main role="main">
                         <div class="container aling-center" style="margin-top:5%; margin-rigth:2%;">
                         <?php
