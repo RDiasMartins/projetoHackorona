@@ -32,45 +32,49 @@
         </main>
     </div>
 
-    <div class="container-fluid ">
+    <div class="container ">
         <?php
             if(empty($_POST)){
         ?>
-            <form class="form formCliente" action = "cadastro_cliente.php" method = "POST" style="margin-left:3%;">
-                <div class = "row" style="width:100%;">
-                    <div class = " form-group col-lg-4 offset-lg-1    col-sm-8 offset-sm-1" style="position:relative;">
-                        <label style="padding-top:5%"> Nome completo: </label>
+            <form class="form formCliente" action = "cadastro_cliente.php" method = "POST" >
+                <div class = "row">
+                    <div class = "form-group col-lg-2 col-sm-4 ">
+                        <label> CPF </label>
+                        <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"/>
+                    </div>
+                    <div class = "form-group col-lg-10 col-sm-8">
+                        <label> Nome completo </label>
                         <input type="text" name="nome" id="nome" class="form-control" required="required;"/>
                     </div>
-
-                    <div class = "form-group col-lg-4 offset-lg-1    col-sm-8 offset-sm-1"  style="position:relative;">
-                        <label style="padding-top:5%"> CPF: </label>
-                        <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required"/>
+                </div>
+                <div class = "row">
+                    <div class = "form-group col-lg-6 col-sm-6">
+                        <label> Email </label>
+                        <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"/>
+                    </div>
+                    <div class="form-group col-lg-6 col-sm-6">
+                        <label> Confirmação </label>
+                        <input type="email" name="email" id="conf_email" class="form-control email" required="required" placeholder="exemplo@email.com"/>
                     </div>
                 </div>
-                <div class = "row" style="width:100%;">
-                    <div class = "form-group col-lg-4 offset-lg-1   col-sm-8 offset-sm-1" style="position:relative;">
-                        <label style="padding-top:5%"> Email: </label>
-                        <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="nome@email.com"/>
-
-                        <label style="padding-top:5%"> Confirmação: </label>
-                        <input type="email" name="email" id="conf_email" class="form-control email" required="required" placeholder="nome@email.com"/>
-                    </div>
-                    <div class = "form-group col-lg-2 offset-lg-1    col-sm-8 offset-sm-1" style="position:relative;">
-                        <label style="padding-top:10%"> Senha: </label>
+                <div class = "row">
+                    <div class = "form-group col-lg-6 col-sm-6">
+                        <label> Senha: </label>
                         <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
                     </div>
-                    <div class = "form-group col-lg-2 offset-lg-0    col-sm-8 offset-sm-1">
-                        <label style="padding-top:10%"> Confirme a senha: </label>
+                    <div class = "form-group col-lg-6  col-sm-6">
+                        <label> Confirme a senha </label>
                         <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
                     </div>
                 </div>
-                <div class = "row" style="width:100%;">
-                    <div class = "col offset-lg-9 offset-sm-7">
-                        <p style="padding-top:40px; position:absolute;"><button type="submit" class="btn btn-warning">Cadastrar</button></p>
-                    </div>
+
+                <br/>
+
+                <div class="float-right">
+                    <button type="submit" class="btn btn-warning">Cadastrar</button>
                 </div>
             </form>
+    </div>
         <?php
             }
             else{

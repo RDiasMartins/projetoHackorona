@@ -3,6 +3,15 @@ body{
 }
 /* Titulo */
 
+/* Form */
+input{
+    padding: 1rem;
+}
+
+label{
+    padding: 0.5rem;
+}
+
 /* Navbar */
 .navbar {
     background-color: #FFD700;
