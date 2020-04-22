@@ -2,9 +2,7 @@ body{
   color: #5a5a5a;
 }
 /* Titulo */
-.titulo_mob{
-    font-size: 0.5rem;
-}
+
 /* Navbar */
 .navbar {
     background-color: #FFD700;
