@@ -23,7 +23,7 @@
         <main role="main">
             <div style="background-color: #333;" class="jumbotron">
                 <div style="color: white;"class="container">
-                    <h2 class="display-3 text-bold font-weight-normal titulo<?=$dispositivo;?>">Cadastro de usuário</h2>
+                    <h2 class="display-3 text-bold font-weight-normal">Cadastro de usuário</h2>
                 </div>
             </div>
         </main>

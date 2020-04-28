@@ -18,6 +18,7 @@
         <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet"/>
     </head>
     <body>
+
         <!-- Menu -->
         <div class="d-flex" id="wrapper">
             <?php
@@ -58,11 +59,7 @@
                                     $valor=$_POST["valor"];
                                     $desconto=$_POST["desconto"];
                                     $data_venda=$_POST["data_venda"];
-<<<<<<< HEAD
                                     $empresa=$_SESSION["cnpj"];
-=======
-                                    $empresa=$_SESSION["cnpj"];                                    
->>>>>>> 43dfb3568ecd8938c4cfd033cffd28f8e7f1c46b
 
 
                                     $sth = $link->prepare('INSERT into cupom (titulo, descricao, valor, desconto, imagemcupom, data_venda, empresa) values (:titulo, :descricao, :valor, :desconto, :imagemcupom, :data_venda, :empresa)');
