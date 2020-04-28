@@ -49,7 +49,7 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    <i class="material-icons">local_offer</i>
+                    <i class="material-icons">calendar_today</i>
                 </div>&nbsp;
                 <input type="date" name="data_venda" id="data_venda" placeholder="Data de disponibilidade" class="form-control" required= "required"
                 />
