@@ -1,8 +1,7 @@
 <?php
     session_start();
 
-    unset($_SESSION["Email"]);
-    unset($_SESSION["Senha"]);
+    unset($_SESSION["tabela"]);
 
     session_destroy();
 

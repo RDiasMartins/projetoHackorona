@@ -68,21 +68,6 @@
                             </section>
                         </div>
                     </div>
-                    <div class = "row pb-3" style=" width:80%; margin-left:10%">
-                        <div class = "col-lg-8 offset-lg-2">
-                            <div class="page-content" style=" border: 1px solid silver;">
-                            <br/>
-                                <ul style="list-style-type: none; padding-top:0%;">
-                                    <li class="contentnode">
-                                        <dl>
-                                            <dt> Método de pagamento </dt>
-                                        </dl>
-                                    </li>
-                                    <br/>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

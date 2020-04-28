@@ -40,10 +40,9 @@
                                 </div>
                             </div>
                         <div class="container aling-center" style="margin-rigth:2%;">
-
+                        <div class="row">
                                 <?php
-                                    include "../inc/lojaCupons.inc";
-                                   /* include "conexao_pdo.php";
+                                    include "conexao_pdo.php";
 
                                     $sth = $link->prepare('SELECT *
                                         FROM cupom
@@ -58,28 +57,33 @@
                                             $preco = $linha['valor'] - ($linha['valor'] * ($linha['desconto']/100));
 
                                             echo'
-                                                <div class="card mb-3" style="max-width: 1000px;">
-                                                    <div class="row no-gutters">
-                                                        <div class="col-md-4">
-                                                            <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">'.$linha['titulo'].'</h5>
-                                                                <h5 class="card-title">R$'.$preco.'</h5>
-                                                                <p class="card-text ">'.$linha['descricao'].'</p>
+                                                <div class="col-md-4">
+                                                    <div class="card mb-4 shadow-sm">
+                                                        <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
+                                                        <div class="card-body">
+                                                        <p class="card-text"><h5 class="card-title">'.$linha['titulo'].'</h5></p>
+                                                            <h4 class="card-title">Desconto:'.$linha['desconto'].'%</h4>
+                                                            <div class="card-title">De:
+                                                                <h5  style="color:red; text-decoration:line-through;" class="valor">R$'.$linha['valor'].'</h5>Por:
+                                                                <h5 style="color:green;" class="novoValor">R$'.$preco.'</h5>
+                                                            </div>
+                                                            <p class="card-text ">'.$linha['descricao'].'</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="btn-group">
                                                                 <a href="#"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Comprar</a>
                                                             </div>
+                                                            <small class="text-muted">Duração de 6 meses</small>
                                                         </div>
-                                                  </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                              <br/>
                                             ';
                                         }
                                     }else{
                                         echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
-                                    }*/
+                                    }
                                 ?>
+                        </div>
                         </div>
                     </main>
                 </div>

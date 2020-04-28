@@ -11,7 +11,7 @@
                 <div class="carousel-caption text-left">
                     <h1>Cadastro</h1>
                     <p>Experimente nossos serviços.</p>
-                    <p><a class="btn btn-lg btn-warning" href="php/cadastro_cliente.php" role="button">Cadastre-se</a></p>
+                    <p><a class="btn btn-lg btn-warning" href="php/redireciona_cadastro.php" role="button">Cadastre-se</a></p>
               </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                 <div class="carousel-caption text-right">
                     <h1>Cupons</h1>
                     <p>Preços que cabem no seu bolso.</p>
-                    <p><a class="btn btn-lg btn-warning" href="php/cuponsCadastrados.php" role="button">Comprar</a></p>
+                    <p><a class="btn btn-lg btn-warning" href="php/cadastro_cliente.php" role="button">Comprar</a></p>
                 </div>
             </div>
         </div>

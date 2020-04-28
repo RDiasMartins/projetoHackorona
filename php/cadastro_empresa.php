@@ -34,9 +34,6 @@
             <div style="background-color: #333;" class="jumbotron">
                 <div style="color: white;" class="container">
                     <h2 class="display-3 text-bold font-weight-normal titulo<?=$dispositivo;?>">Cadastro de empresa</h2>
-                    <p class="float-right">Cadastro de cliente
-                        <a class="btn btn-warning btn-sm" href="../php/cadastro_cliente.php">Aqui</a>
-                    </p>
                 </div>
             </div>
         </main>
@@ -151,11 +148,12 @@
                     </div>
                 </div>
                 <br/>
-                <div class="float-right">
-                    <button type="submit" class="btn btn-warning"> Cadastrar </button>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <button type="submit" class="btn btn-dark btn-block">Cadastrar</button>
+                    </div>
                 </div>
             </form>
-
     </div>
 
         <?php
@@ -194,17 +192,17 @@
 
                     $sth->bindValue(':razao_social', $razao_social, PDO::PARAM_STR);
                     $sth->bindValue(':nome_fantasia', $nome_fantasia, PDO::PARAM_STR);
-                    $sth->bindValue(':cnpj', $cnpj, PDO::PARAM_INT);
+                    $sth->bindValue(':cnpj', $cnpj, PDO::PARAM_STR);
                     $sth->bindValue(':categoria', $categoria, PDO::PARAM_STR);
-                    $sth->bindValue(':telefone', $telefone, PDO::PARAM_INT);
-                    $sth->bindValue(':cep', $cep, PDO::PARAM_INT);
+                    $sth->bindValue(':telefone', $telefone, PDO::PARAM_STR);
+                    $sth->bindValue(':cep', $cep, PDO::PARAM_STR);
                     $sth->bindValue(':estado', $estado, PDO::PARAM_STR);
                     $sth->bindValue(':cidade', $cidade, PDO::PARAM_STR);
                     $sth->bindValue(':bairro', $bairro, PDO::PARAM_STR);
                     $sth->bindValue(':rua', $rua, PDO::PARAM_STR);
-                    $sth->bindValue(':numero', $numero, PDO::PARAM_INT);
+                    $sth->bindValue(':numero', $numero, PDO::PARAM_STR);
                     $sth->bindValue(':nome', $nome, PDO::PARAM_STR);
-                    $sth->bindValue(':cpf', $cpf, PDO::PARAM_INT);
+                    $sth->bindValue(':cpf', $cpf, PDO::PARAM_STR);
                     $sth->bindValue(':email', $email, PDO::PARAM_STR);
                     $sth->bindValue(':senha', $senha, PDO::PARAM_STR);
                     $sth->execute();

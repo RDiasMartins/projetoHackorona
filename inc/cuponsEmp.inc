@@ -1,3 +1,8 @@
+<?php
+    include "../php/conexao_pdo.php";
+    $sth = $link->prepare("SELECT cnpj from empresa WHERE cnpj=:cnpj");
+    /* Inicio da comparacao de cupons*/
+?>
 <div class="row">
     <div class="col-md-4">
     <div class="card mb-4 shadow-sm" height="10%">

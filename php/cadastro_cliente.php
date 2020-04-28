@@ -24,9 +24,6 @@
             <div style="background-color: #333;" class="jumbotron">
                 <div style="color: white;"class="container">
                     <h2 class="display-3 text-bold font-weight-normal titulo<?=$dispositivo;?>">Cadastro de usuário</h2>
-                    <p class="float-right">Cadastre sua empresa
-                        <a class="btn btn-warning btn-sm" href="../php/cadastro_empresa.php">Aqui</a>
-                    </p>
                 </div>
             </div>
         </main>
@@ -67,11 +64,10 @@
                         <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
                     </div>
                 </div>
-
-                <br/>
-
-                <div class="float-right">
-                    <button type="submit" class="btn btn-warning">Cadastrar</button>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <button type="submit" class="btn btn-dark btn-block">Cadastrar</button>
+                    </div>
                 </div>
             </form>
     </div>

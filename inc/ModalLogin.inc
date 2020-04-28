@@ -37,7 +37,7 @@
                         </select>
                     </div>
                     <div class = "float-right">
-                        <a class="btn btn-md btn-warning" href="php/cadastro_cliente.php" role="button">Cadastre-se</a>
+                        <a class="btn btn-md btn-warning" href="php/redireciona_cadastro.php" role="button">Cadastre-se</a>
                         <button type = "submit" class ="btn btn-md btn-warning">
                             Entrar
                         </button>
