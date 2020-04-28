@@ -76,7 +76,11 @@
                                                         </div>
                                                         </div>
                                                     </div>
+<<<<<<< HEAD
                                                 </div>
+=======
+                                                </div>  
+>>>>>>> 43dfb3568ecd8938c4cfd033cffd28f8e7f1c46b
                                             ';
                                         }
                                     }else{
