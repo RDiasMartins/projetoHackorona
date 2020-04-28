@@ -58,16 +58,19 @@
                                     $descricao= $_POST["descricao"];
                                     $valor=$_POST["valor"];
                                     $desconto=$_POST["desconto"];
+                                    $data_venda=$_POST["data_venda"];
+                                    $empresa=$_SESSION["cnpj"];                                    
 
 
-
-                                    $sth = $link->prepare('INSERT into cupom (titulo, descricao, valor, desconto, imagemcupom) values (:titulo, :descricao, :valor, :desconto, :imagemcupom)');
+                                    $sth = $link->prepare('INSERT into cupom (titulo, descricao, valor, desconto, imagemcupom, data_venda, empresa) values (:titulo, :descricao, :valor, :desconto, :imagemcupom, :data_venda, :empresa)');
 
                                     $sth->bindValue(':titulo', $titulo, PDO::PARAM_INT);
                                     $sth->bindValue(':descricao', $descricao, PDO::PARAM_STR);
                                     $sth->bindValue(':valor', $valor, PDO::PARAM_STR);
                                     $sth->bindValue(':desconto', $desconto, PDO::PARAM_STR);
                                     $sth->bindValue(':imagemcupom', $imagem, PDO::PARAM_STR);
+                                    $sth->bindValue(':data_venda', $data_venda, PDO::PARAM_STR);
+                                    $sth->bindValue(':empresa', $empresa, PDO::PARAM_STR);
                                     $sth->execute();
 
                                     header ('Location: cadastroCupons.php');

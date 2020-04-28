@@ -194,7 +194,7 @@
 
                     $sth->bindValue(':razao_social', $razao_social, PDO::PARAM_STR);
                     $sth->bindValue(':nome_fantasia', $nome_fantasia, PDO::PARAM_STR);
-                    $sth->bindValue(':cnpj', $cnpj, PDO::PARAM_INT);
+                    $sth->bindValue(':cnpj', $cnpj, PDO::PARAM_STR);
                     $sth->bindValue(':categoria', $categoria, PDO::PARAM_STR);
                     $sth->bindValue(':telefone', $telefone, PDO::PARAM_INT);
                     $sth->bindValue(':cep', $cep, PDO::PARAM_INT);
@@ -204,7 +204,7 @@
                     $sth->bindValue(':rua', $rua, PDO::PARAM_STR);
                     $sth->bindValue(':numero', $numero, PDO::PARAM_INT);
                     $sth->bindValue(':nome', $nome, PDO::PARAM_STR);
-                    $sth->bindValue(':cpf', $cpf, PDO::PARAM_INT);
+                    $sth->bindValue(':cpf', $cpf, PDO::PARAM_STR);
                     $sth->bindValue(':email', $email, PDO::PARAM_STR);
                     $sth->bindValue(':senha', $senha, PDO::PARAM_STR);
                     $sth->execute();
