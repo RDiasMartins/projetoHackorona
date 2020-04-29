@@ -46,7 +46,7 @@
 
                                     $sth = $link->prepare('SELECT *
                                         FROM cupom
-                                        ORDER BY titulo');
+                                        ORDER BY data_venda');
 
                                     $sth->execute();
 

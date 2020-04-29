@@ -64,7 +64,7 @@
 
                                     $sth = $link->prepare('INSERT into cupom (titulo, descricao, valor, desconto, imagemcupom, data_venda, empresa) values (:titulo, :descricao, :valor, :desconto, :imagemcupom, :data_venda, :empresa)');
 
-                                    $sth->bindValue(':titulo', $titulo, PDO::PARAM_INT);
+                                    $sth->bindValue(':titulo', $titulo, PDO::PARAM_STR);
                                     $sth->bindValue(':descricao', $descricao, PDO::PARAM_STR);
                                     $sth->bindValue(':valor', $valor, PDO::PARAM_STR);
                                     $sth->bindValue(':desconto', $desconto, PDO::PARAM_STR);
