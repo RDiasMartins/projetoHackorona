@@ -20,9 +20,9 @@
 
     <div style="font-size: 1.125rem; text-anchor: middle;">
         <main role="main">
-            <div style="background-color: #333;" class="jumbotron">
+            <div style="background-color: #333; height:10rem;" class="jumbotron">
                 <div style="color: white;"class="container">
-                    <h2 class="display-3 text-bold font-weight-normal titulo<?=$dispositivo;?>">Escolha seu cadastro</h2>
+                    <h2 style="font-size:3rem;" class="display-3 text-bold font-weight-normal titulo<?=$dispositivo;?>">Escolha seu cadastro</h2>
                 </div>
             </div>
         </main>
