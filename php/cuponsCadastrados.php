@@ -61,8 +61,8 @@
                                                     <div class="card mb-4 shadow-sm">
                                                         <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
                                                         <div class="card-body">
-                                                        <p class="card-text"><h5 class="card-title">'.$linha['titulo'].'</h5></p>
-                                                            <h4 class="card-title">Desconto:'.$linha['desconto'].'%</h4>
+                                                        <p class="card-text"><h4 class="card-title">'.$linha['titulo'].'</h5></p>
+                                                            <h5 class="card-title">Desconto: '.$linha['desconto'].'%</h4>
                                                             <div class="card-title">De:
                                                                 <h5  style="color:red; text-decoration:line-through;" class="valor">R$'.$linha['valor'].'</h5>Por:
                                                                 <h5 style="color:green;" class="novoValor">R$'.$preco.'</h5>
