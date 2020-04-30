@@ -70,7 +70,7 @@
                                                             <p class="card-text ">'.$linha['descricao'].'</p>
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="btn-group">
-                                                                <a href="#"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Comprar</a>
+                                                                <a href="finaliza_compra.php?codigo='.$linha['codigo'].'&cpf='.$_SESSION['cpf'].'"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Comprar</a>
                                                             </div>
                                                             <small class="text-muted">Duração de 6 meses</small>
                                                         </div>
