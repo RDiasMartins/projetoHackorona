@@ -49,49 +49,20 @@
                         <div class="container align-center" style="margin-left:0;">
                         <?php
                             if($_SESSION["tabela"]=='cliente'){
+                                include "../inc/couponsCliente1.php";
+                            }
+                            else{
+                                include "../inc/cuponsEmp1.php";
+                            }
+                            /*if($_SESSION["tabela"]=='cliente'){
                                 include "../inc/cuponsCliente.inc";
                             }
                             else{
                                 include "../inc/cuponsEmp.inc";
-                            }
+                            }*/
                         ?>
                         <?php
-                                /*include "conexao_pdo.php";
-
-                                $sth = $link->prepare('SELECT *
-                                    FROM cupom
-                                    ORDER BY titulo');
-
-                                $sth->execute();
-
-                                if($sth->rowCount()){
-                                    $preco=0;
-
-                                    while($linha=$sth->fetch()){
-                                        $preco = $linha['valor'] - ($linha['valor'] * ($linha['desconto']/100));
-
-                                        echo'
-                                            <div class="card mb-3" style="max-width: 1000px;">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-4">
-                                                        <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">'.$linha['titulo'].'</h5>
-                                                            <h5 class="card-title">R$'.$preco.'</h5>
-                                                            <p class="card-text ">'.$linha['descricao'].'</p>
-                                                            <a href="#"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Comprar</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br/>
-                                        ';
-                                    }
-                                }else{
-                                    echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
-                                }*/
+                            
                             ?>
                         </div>
                     </main>
