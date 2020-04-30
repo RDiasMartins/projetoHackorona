@@ -57,31 +57,31 @@
             <form class="form" name="formCliente" action = "cadastro_cliente.php" method = "POST" >
                 <div class = "row">
                     <div class = "form-group col-lg-2 col-sm-4">
-                        <label style="padding: 1rem;"> CPF </label>
+                        <label style="padding: 0.5rem;"> CPF </label>
                         <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"/>
                     </div>
                     <div class = "form-group col-lg-10 col-sm-8">
-                        <label style="padding: 1rem;"> Nome completo </label>
+                        <label style="padding: 0.5rem;"> Nome completo </label>
                         <input type="text" name="nome" id="nome" class="form-control" required="required;"/>
                     </div>
                 </div>
                 <div class = "row">
                     <div class = "form-group col-lg-6 col-sm-6">
-                        <label style="padding: 1rem;"> Email </label>
+                        <label style="padding:  0.5rem;"> Email </label>
                         <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"/>
                     </div>
                     <div class="form-group col-lg-6 col-sm-6">
-                        <label style="padding: 1rem;"> Confirmação </label>
+                        <label style="padding:  0.5rem;"> Confirmação </label>
                         <input type="email" name="email" id="conf_email" class="form-control email" required="required" placeholder="exemplo@email.com"/>
                     </div>
                 </div>
                 <div class = "row">
                     <div class = "form-group col-lg-6 col-sm-6">
-                        <label style="padding: 1rem;"> Senha </label>
+                        <label style="padding:  0.5rem;"> Senha </label>
                         <input type="password" name="senha" id="senha" class="form-control password" required="required"/>
                     </div>
                     <div class = "form-group col-lg-6  col-sm-6">
-                        <label style="padding: 1rem;"> Confirme a senha </label>
+                        <label style="padding:  0.5rem;"> Confirme a senha </label>
                         <input type="password" name="senha" id="conf_senha" class="form-control password" required="required"/>
                     </div>
                 </div>

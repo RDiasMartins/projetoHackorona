@@ -41,11 +41,11 @@
                         </div>
                     </main>
                     <?php
-                        include "conexao.php";
+                        include "conexao_pdo.php";
                         $codigo=$_GET["codigo"];
                         $cpf=$_GET["cpf"];
 
-                        
+
 
                         $sth = $link->prepare('INSERT into cupom_cliente (codigo, cpf) values (:codigo, :cpf)');
 

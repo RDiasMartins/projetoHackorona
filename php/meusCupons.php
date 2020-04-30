@@ -49,7 +49,7 @@
                         <div class="container align-center" style="margin-left:0;">
                         <?php
                             if($_SESSION["tabela"]=='cliente'){
-                                include "../inc/couponsCliente1.php";
+                                include "../inc/cuponsCliente1.php";
                             }
                             else{
                                 include "../inc/cuponsEmp1.php";
@@ -62,7 +62,7 @@
                             }*/
                         ?>
                         <?php
-                            
+
                             ?>
                         </div>
                     </main>
