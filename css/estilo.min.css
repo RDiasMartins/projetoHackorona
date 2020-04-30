@@ -1,32 +1,24 @@
 body{
   color: #5a5a5a;
-  padding-bottom: 30px;
+  height: 100%;
 }
-/* Titulo */
 
 /* Form */
 input{
     padding: 1rem;
 }
 
-label{
-    padding: 0.5rem;
-}
-
 /* Navbar */
-.navbar {
+.navbar{
     background-color: #FEDE59;
     border-color: #E7E7E7;
 }
 
 /* Rodapé */
-footer{
-    margin: auto;
-    width: 100%;
-    bottom: 0;
-    position: absolute;
+.footer{
+    padding-top:10rem;
+    bottom:0;
 }
-
 /* Jumbotron */
 .jumbotron{
     -webkit-box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.75);

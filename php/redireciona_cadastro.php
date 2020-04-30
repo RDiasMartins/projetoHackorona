@@ -17,7 +17,6 @@
     <br/> <br/>
 
     <!-- Conteúdo -->
-
     <div style="font-size: 1.125rem; text-anchor: middle;">
         <main role="main">
             <div style="background-color: #333; height:10rem;" class="jumbotron">

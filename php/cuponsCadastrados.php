@@ -34,22 +34,138 @@
 
                 <div class="container-fluid" style="margin-top:1%; font-size: 1.125rem; text-anchor: middle;">
                     <main role="main">
-                            <div style="background-color: #333;" class="jumbotron">
-                                <div style="color: white;"class="container">
-                                    <h1 class="display-3 text-bold font-weight-normal">Cupons</h1>
-                                </div>
+                        <!-- Formulário de filtragem -->
+                        <?php include "conexao_pdo.php"; ?>
+                            <div style="color:white; background-color: #333;" class="jumbotron">
+                                <form name="filtroCupom" method="GET">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-4">
+                                            <label>Preço </label> <br/>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio"  id="filtroPreco" value="Normal" name="filtroPreco" class="custom-control-input" onchange="document.filtroCupom.submit()">
+                                                <label class="custom-control-label" for="filtroPreco">Normal</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="filtroPreco2" value="Maior" name="filtroPreco" class="custom-control-input" onchange="document.filtroCupom.submit()">
+                                                <label class="custom-control-label" for="filtroPreco2">Maior</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="filtroPreco3" value="Menor" name="filtroPreco" class="custom-control-input" onchange="document.filtroCupom.submit()">
+                                                <label class="custom-control-label" for="filtroPreco3">Menor</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-4 col-sm-4">
+                                            <label>Categoria </label>
+                                            <select class="custom-select" name="filtroCat" onchange="document.filtroCupom.submit()">
+                                                    <option value="Todas">Todas</option>
+                                                <?php
+                                                    $sth=$link->prepare('SELECT DISTINCT(categoria) as cat from empresa');
+
+                                                    $sth->execute();
+
+                                                    while($linha=$sth->fetch()){
+                                                        echo'<option';
+
+                                                        if(isset($_GET["filtroCat"])){
+                                                            if($_GET["filtroCat"]==$linha['cat']){
+                                                                echo' selected';
+                                                            }
+                                                        }
+
+                                                        echo' value="'.$linha['cat'].'">';
+
+                                                        if($linha['cat']=='beleza_saude'){
+                                                            echo'Beleza/Saude';
+                                                        }else if($linha['cat']=='comercio'){
+                                                            echo'Comércio';
+                                                        }else if($linha['cat']=='gastronomia'){
+                                                            echo'Gastronomia';
+                                                        }else if($linha['cat']=='entretenimento'){
+                                                            echo'Entretenimento';
+                                                        }else if($linha['cat']=='viagem'){
+                                                            echo'Viagem';
+                                                        }
+
+                                                        echo'</option>';
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-4">
+                                            <label>Cidade </label>
+                                            <select class="custom-select" name="filtroCid" onchange="document.filtroCupom.submit()">
+                                                <option value="Todas">Todas</option>
+                                                <?php
+                                                    $sth=$link->prepare('SELECT DISTINCT(cidade) as c from empresa');
+
+                                                    $sth->execute();
+
+                                                    while($linha=$sth->fetch()){
+                                                        echo'<option';
+
+                                                        if(isset($_GET["filtroCid"])){
+                                                            if($_GET["filtroCid"]==$linha['c']){
+                                                                echo' selected';
+                                                            }
+                                                        }
+
+                                                        echo'>'.$linha['c'].'</option>';
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        <div class="container aling-center" style="margin-rigth:2%;">
+                        <br/>
+                    <div class="container-fluid" style="margin-rigth:2%;">
                         <div class="row">
                                 <?php
-                                    include "conexao_pdo.php";
+                                    $consulta='SELECT * FROM cupom INNER JOIN empresa ON cupom.empresa=empresa.cnpj';
+                                    $flagWhere=false;
 
-                                    $sth = $link->prepare('SELECT *
-                                        FROM cupom
-                                        ORDER BY data_venda');
+                                    if(isset($_GET["filtroCid"])){
+                                        if($_GET["filtroCid"]!='Todas'){
+                                            if(!$flagWhere){
+                                                $consulta.=" WHERE empresa.cidade = '".$_GET["filtroCid"]."'";
+                                                $flagWhere=true;
+                                            }else{
+                                                $consulta.="  AND empresa.cidade = '".$_GET["filtroCid"]."'";
+                                            }
+
+                                        }
+                                    }
+
+                                    if(isset($_GET["filtroCat"])){
+                                        if($_GET["filtroCat"]!='Todas'){
+                                            if(!$flagWhere){
+                                                $consulta.=" WHERE empresa.categoria = '".$_GET["filtroCat"]."'";
+                                                $flagWhere=true;
+                                            }else{
+                                                $consulta.=" AND empresa.categoria = '".$_GET["filtroCat"]."'";
+                                            }
+
+                                        }
+                                    }
+
+                                    if(isset($_GET["filtroPreco"])){
+                                        if($_GET["filtroPreco"]!='Normal'){
+                                            if($_GET["filtroPreco"]=='Menor'){
+                                                $consulta.=' ORDER BY valor asc';
+                                            }
+
+                                            if($_GET["filtroPreco"]=='Maior'){
+                                                $consulta.=' ORDER BY valor desc';
+                                            }
+                                        }
+                                    }
+
+                                    $sth = $link->prepare($consulta);
 
                                     $sth->execute();
 
+                                    //Exibição dos cupons
                                     if($sth->rowCount()){
                                         $preco=0;
 
@@ -57,7 +173,7 @@
                                             $preco = $linha['valor'] - ($linha['valor'] * ($linha['desconto']/100));
 
                                             echo'
-                                                <div class="col-md-4">
+                                                <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="card mb-4 shadow-sm">
                                                         <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
                                                         <div class="card-body">
@@ -80,10 +196,12 @@
                                             ';
                                         }
                                     }else{
-                                        echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
+                                        echo '<div class="container">
+                                                <h2 class=" display-5 text-center">NENHUM CUPOM ENCONTRADO</h2>
+                                            </div>
+                                            ';
                                     }
                                 ?>
-                        </div>
                         </div>
                     </main>
                 </div>
