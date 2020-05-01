@@ -1,13 +1,13 @@
 <div class="row">
 <?php
     include "conexao_pdo.php";
-    $cpf=$_SESSION["cpf"];
+    $cnpj=$_SESSION["cnpj"];
 
     $sth = $link->prepare('SELECT *
         FROM cupom
-        INNER JOIN cupom_cliente
-        ON cupom_cliente.codigo=cupom.codigo AND cupom_cliente.cpf=:cpf' );
-    $sth -> bindValue(":cpf", $cpf);
+        INNER JOIN empresa
+        ON cupom.empresa=empresa.cnpj AND cupom.empresa=:cnpj' );
+    $sth -> bindValue(":cnpj", $cnpj);
     $sth->execute();
 
     if($sth->rowCount()){
@@ -29,7 +29,7 @@
                             <p class="card-text ">'.$linha['descricao'].'</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="#"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Utilizado</a>
+                                <a href="#"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Cadastrado</a>
                             </div>
                             <small class="text-muted">Duração de 6 meses</small>
                         </div>
@@ -42,3 +42,4 @@
         echo '<tr><td colspan="6"><h2 class=" display-5 text-center">Nenhum cupom cadastrado</h2></td></tr>';
     }
 ?>
+</div>

@@ -186,7 +186,9 @@
                                                             <p class="card-text ">'.$linha['descricao'].'</p>
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="btn-group">
-                                                                <a href="finaliza_compra.php?codigo='.$linha['codigo'].'&cpf='.$_SESSION['cpf'].'"style="background-color:#FFDB58; color:white;"class="btn btn-warning btn-lg">Comprar</a>
+                                                                <button style="background-color:#FFDB58; color:white;" class="btn" data-toggle="modal" data-target="#ModalCompra">
+                                                                    Comprar
+                                                                </button>
                                                             </div>
                                                             <small class="text-muted">Duração de 6 meses</small>
                                                         </div>
@@ -201,7 +203,29 @@
                                             </div>
                                             ';
                                     }
-                                ?>
+                            
+                                echo'<div class="modal fade" id="ModalCompra" tabindex="-1" role="dialog" aria-labelledby="ModalCompra" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <center>
+                                                    <h5 class="modal-title" id="ModalTitulo2">&nbsp; Cpmpra</h5>
+                                                </center>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h3>Você deseja finalizar a compra?</h3>
+                                                <div class = "float-right">
+                                                    <a class="btn btn-md btn-warning" href="cuponsCadastrados.php" role="button">Cancelar</a>
+                                                    <a class="btn btn-md btn-warning" href="finaliza_compra.php?codigo='.$linha['codigo'].'&cpf='.$_SESSION['cpf'].'" role="button">Finalizar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>';
+                            ?>
                         </div>
                     </main>
                 </div>
