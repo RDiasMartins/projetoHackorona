@@ -42,7 +42,6 @@
                     <div style="background-color: #333;" class="jumbotron">
                         <div style="color: white;"class="container">
                             <h1 class="display-3 text-bold font-weight-normal"> Inventário </h1>
-                            <p> Atenção aos prazos de validade! </p>
                         </div>
                     </div>
                     <main role="main">

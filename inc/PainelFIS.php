@@ -17,7 +17,7 @@
            <span class="material-icons">payment</span>
            Meus Cupons
        </a>
-       <a style="color: black; background-color: #FFD700;" href="graficoUsuario.php" class="list-group-item list-group-item-action">
+       <a style="color: black; background-color: #FFD700;" href="statusUsuario.php" class="list-group-item list-group-item-action">
            <span class="material-icons">equalizer</span>
            Status
        </a>

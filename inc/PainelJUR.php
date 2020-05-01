@@ -17,9 +17,9 @@
            <span class="material-icons">payment</span>
            Meus Cupons
        </a>
-       <a style="color: black; background-color: #FFD700;" href="#" class="list-group-item list-group-item-action">
+       <a style="color: black; background-color: #FFD700;" href="statusEmpresa.php" class="list-group-item list-group-item-action">
            <span class="material-icons">equalizer</span>
-           Lucro
+           Status
        </a>
        <a style="color: black; background-color: #FFD700;" href="logout.php" class="list-group-item list-group-item-action ">
            <span class="material-icons">person_outline</span>
