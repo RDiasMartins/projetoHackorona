@@ -51,7 +51,7 @@
                     <p>Ganhe dinheiro promovendo cupons de outros estabelecimentos.</p>
                 </div>
                 <div class="col-lg-4 col-sm-4">
-                    <img src="images/MarketingIcon.png" class="bd-placeholder-img rounded-circle" width="140" height="140"/>
+                    <img src="images/marketingIcon.png" class="bd-placeholder-img rounded-circle" width="140" height="140"/>
                     <br/> <br/> <h2>Marketing</h2>
                     <p>Realize vendas de cupons promocionais e ganhe visibilidade ao seu negócio.</p>
                 </div>
