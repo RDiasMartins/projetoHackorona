@@ -1,7 +1,7 @@
 <div class="row">
 <?php
     include "conexao_pdo.php";
-    $cpf=$_SESSION["cpf"];
+    $cpf=$_SESSION['cpf'];
 
     $sth = $link->prepare('SELECT *
         FROM cupom
@@ -9,12 +9,12 @@
         ON cupom_cliente.codigo=cupom.codigo AND cupom_cliente.cpf=:cpf' );
     $sth -> bindValue(":cpf", $cpf);
     $sth->execute();
+    
 
     if($sth->rowCount()){
         $preco=0;
         while($linha=$sth->fetch()){
             $preco = $linha['valor'] - ($linha['valor'] * ($linha['desconto']/100));
-
             echo'
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">

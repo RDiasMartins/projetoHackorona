@@ -1,6 +1,6 @@
 <div class="row">
 <?php
-    include "conexao_pdo.php";
+    include "../php/conexao_pdo.php";
     $cnpj=$_SESSION["cnpj"];
 
     $sth = $link->prepare('SELECT *
