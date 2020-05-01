@@ -2,20 +2,11 @@
     include "conexao_pdo.php";
     $cpf=$_SESSION["cpf"];
 
-    $sth = $link->prepare('SELECT codigo
-        FROM cupom_cliente
-        WHERE cpf = :cpf');
-
-    $sth -> bindValue(":cpf", $cpf);
-    $sth->execute();
-    print_r($sth);
-
-
-    $sth = $link->prepare('SELECT codigo
+    $sth = $link->prepare('SELECT *
         FROM cupom
         INNER JOIN cupom_cliente
-        WHERE cupom_cliente.codigo=:cupom.codigo');
-    $sth -> bindValue(":codigo", $codigo);
+        ON cupom_cliente.codigo=cupom.codigo AND cupom_cliente.cpf=:cpf' );
+    $sth -> bindValue(":cpf", $cpf);
     $sth->execute();
 
     if($sth->rowCount()){
