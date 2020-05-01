@@ -209,14 +209,16 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <center>
-                                                    <h5 class="modal-title" id="ModalTitulo2">&nbsp; Cpmpra</h5>
+                                                    <h5 class="modal-title" id="ModalTitulo2">&nbsp; Compra</h5>
                                                 </center>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <h3>Você deseja finalizar a compra?</h3>
+                                                <br/>
+                                                <h5>Você deseja finalizar a compra?</h5>
+                                                <br/>
                                                 <div class = "float-right">
                                                     <a class="btn btn-md btn-warning" href="cuponsCadastrados.php" role="button">Cancelar</a>
                                                     <a class="btn btn-md btn-warning" href="finaliza_compra.php?codigo='.$linha['codigo'].'&cpf='.$_SESSION['cpf'].'" role="button">Finalizar</a>
