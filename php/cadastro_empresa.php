@@ -90,7 +90,7 @@
                     <label style="padding: 1rem;"> CNPJ </label>
                     <input type="text" name="cnpj" id="cnpj" class="form-control cnpj" required="required" placeholder="00.000.000/0000-00"
                         <?php
-                            if(isset($_SESSION["cnpj"])){
+                            if(isset($_SESSION["cnpj"]) && !isset($_GET["cnpjjaexiste"])){
                                 echo'value="'.$_SESSION["cnpj"].'"';
                             }
                         ?>
@@ -212,7 +212,7 @@
                     <label style="padding: 1rem;"> CPF </label>
                     <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"
                     <?php
-                        if(isset($_SESSION["cpf"])){
+                        if(isset($_SESSION["cpf"]) && !isset($_GET["cpfjaexiste"])){
                             echo'value="'.$_SESSION["cpf"].'"';
                         }
                     ?>
@@ -221,7 +221,7 @@
                     <label style="padding: 1rem;"> E-mail </label>
                     <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"
                     <?php
-                        if(isset($_SESSION["email"])){
+                        if(isset($_SESSION["email"]) && !isset($_GET["emailjaexiste"])){
                             echo'value="'.$_SESSION["email"].'"';
                         }
                     ?>

@@ -18,7 +18,7 @@
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
-        <title> Página inicial </title>
+        <title> Encontre - Home </title>
         <link rel="shortcut icon" href="images/logo.png" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />

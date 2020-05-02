@@ -63,7 +63,7 @@
                         <label style="padding: 0.5rem;"> CPF </label>
                         <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"
                         <?php
-                            if(isset($_SESSION["cpf"])){
+                            if(isset($_SESSION["cpf"]) && !isset($_GET["cpfjaexiste"])){
                                 echo'value="'.$_SESSION["cpf"].'"';
                             }
                         ?>
@@ -85,7 +85,7 @@
                         <label style="padding:  0.5rem;"> Email </label>
                         <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"
                         <?php
-                            if(isset($_SESSION["email"])){
+                            if(isset($_SESSION["email"]) && !isset($_GET["emailjaexiste"])){
                                 echo'value="'.$_SESSION["email"].'"';
                             }
                         ?>

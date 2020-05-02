@@ -39,23 +39,36 @@
                             <div style="color:white; background-color: #333;" class="jumbotron">
                                 <form name="filtroCupom" method="GET">
                                     <div class="row">
-                                        <div class="col-lg-4 col-sm-4">
+                                        <div class="col-lg-3 col-sm-3">
                                             <label>Preço </label> <br/>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio"  id="filtroPreco" value="Normal" name="filtroPreco" class="custom-control-input" onchange="document.filtroCupom.submit()">
-                                                <label class="custom-control-label" for="filtroPreco">Normal</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="filtroPreco2" value="Maior" name="filtroPreco" class="custom-control-input" onchange="document.filtroCupom.submit()">
+                                                <input type="radio" class="custom-control-input" value="Maior" name="filtroPreco" id="filtroPreco2" onchange="document.filtroCupom.submit()"
+
+                                                <?php
+                                                    if(isset($_GET["filtroPreco"])){
+                                                        if($_GET["filtroPreco"]=='Maior'){
+                                                                echo'checked';
+                                                        }
+                                                    }
+                                                ?>
+                                                >
                                                 <label class="custom-control-label" for="filtroPreco2">Maior</label>
                                             </div>
+
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="filtroPreco3" value="Menor" name="filtroPreco" class="custom-control-input" onchange="document.filtroCupom.submit()">
+                                                <input type="radio" class="custom-control-input" value="Menor" name="filtroPreco" id="filtroPreco3" onchange="document.filtroCupom.submit()"
+                                                <?php
+                                                    if(isset($_GET["filtroPreco"])){
+                                                        if($_GET["filtroPreco"]=='Menor'){
+                                                                echo'checked';
+                                                        }
+                                                    }
+                                                ?>
+                                                >
                                                 <label class="custom-control-label" for="filtroPreco3">Menor</label>
                                             </div>
-
                                         </div>
-                                        <div class="col-lg-4 col-sm-4">
+                                        <div class="col-lg-3 col-sm-3">
                                             <label>Categoria </label>
                                             <select class="custom-select" name="filtroCat" onchange="document.filtroCupom.submit()">
                                                     <option value="Todas">Todas</option>
@@ -92,7 +105,7 @@
                                                 ?>
                                             </select>
                                         </div>
-                                        <div class="col-lg-4 col-sm-4">
+                                        <div class="col-lg-3 col-sm-3">
                                             <label>Cidade </label>
                                             <select class="custom-select" name="filtroCid" onchange="document.filtroCupom.submit()">
                                                 <option value="Todas">Todas</option>
@@ -114,6 +127,9 @@
                                                     }
                                                 ?>
                                             </select>
+                                        </div>
+                                        <div style="padding-top: 2rem;" class="col-lg-3 col-sm-3">
+                                            <button type="button" onclick='window.location.href="cuponsCadastrados.php"' class="btn btn-warning btn-block">Limpar</button>
                                         </div>
                                     </div>
                                 </form>
@@ -175,7 +191,9 @@
                                             echo'
                                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="card mb-4 shadow-sm">
-                                                        <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
+                                                        <div class="card-header">
+                                                            <img src="../imgCupom/'.$linha['imagemcupom'].'" width="350px" height="200px" >
+                                                        </div>
                                                         <div class="card-body">
                                                         <p class="card-text"><h4 class="card-title">'.$linha['titulo'].'</h5></p>
                                                             <h5 class="card-title">Desconto: '.$linha['desconto'].'%</h4>
