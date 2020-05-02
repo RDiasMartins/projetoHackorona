@@ -171,7 +171,7 @@
 
                                         while($linha=$sth->fetch()){
                                             $preco = $linha['valor'] - ($linha['valor'] * ($linha['desconto']/100));
-
+                                            $_SESSION['codigo']=$linha['codigo'];
                                             echo'
                                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="card mb-4 shadow-sm">
@@ -196,6 +196,7 @@
                                                     </div>
                                                 </div>
                                             ';
+
                                         }
                                     }else{
                                         echo '<div class="container">
@@ -221,7 +222,7 @@
                                                 <br/>
                                                 <div class = "float-right">
                                                     <a class="btn btn-md btn-warning" href="cuponsCadastrados.php" role="button">Cancelar</a>
-                                                    <a class="btn btn-md btn-warning" href="finaliza_compra.php?codigo='.$linha['codigo'].'&cpf='.$_SESSION['cpf'].'" role="button">Finalizar</a>
+                                                    <a class="btn btn-md btn-warning" href="finaliza_compra.php?codigo='.$_SESSION['codigo'].'&cpf='.$_SESSION['cpf'].'" role="button">Finalizar</a>
                                                 </div>
                                             </div>
                                         </div>
