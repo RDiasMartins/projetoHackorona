@@ -53,12 +53,6 @@
                             else{
                                 include "../inc/cuponsEmp1.php";
                             }
-                            /*if($_SESSION["tabela"]=='cliente'){
-                                include "../inc/cuponsCliente.inc";
-                            }
-                            else{
-                                include "../inc/cuponsEmp.inc";
-                            }*/
                         ?>
                         <?php
 
