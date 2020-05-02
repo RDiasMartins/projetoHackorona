@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,13 +70,31 @@
             <div class = "row">
                 <div class = "col-lg-4 col-sm-12">
                     <label style="padding: 1rem;"> Razão Social </label>
-                    <input type="text" name="razao_social" id="razao_social" class="form-control" required="required"/>
+                    <input type="text" name="razao_social" id="razao_social" class="form-control" required="required"
+                        <?php
+                            if(isset($_SESSION["razao_social"])){
+                                echo'value="'.$_SESSION["razao_social"].'"';
+                            }
+                        ?>
+                    />
 
                     <label style="padding: 1rem;"> Nome Fantasia </label>
-                    <input type="text" name="nome_fantasia" id="nome_fantasia" class="form-control" required="required"/>
+                    <input type="text" name="nome_fantasia" id="nome_fantasia" class="form-control" required="required"
+                        <?php
+                            if(isset($_SESSION["nome_fantasia"])){
+                                echo'value="'.$_SESSION["nome_fantasia"].'"';
+                            }
+                        ?>
+                    />
 
                     <label style="padding: 1rem;"> CNPJ </label>
-                    <input type="text" name="cnpj" id="cnpj" class="form-control cnpj" required="required" placeholder="00.000.000/0000-00"/>
+                    <input type="text" name="cnpj" id="cnpj" class="form-control cnpj" required="required" placeholder="00.000.000/0000-00"
+                        <?php
+                            if(isset($_SESSION["cnpj"])){
+                                echo'value="'.$_SESSION["cnpj"].'"';
+                            }
+                        ?>
+                    />
 
                     <label style="padding: 1rem;" for="categoria"> Categoria </label>
                     <select name="categoria" id="categoria" class="form-control">
@@ -85,18 +106,36 @@
                     </select>
 
                     <label style="padding: 1rem;"> Telefone </label>
-                    <input type="tel" name="telefone" id="telefone" class="form-control phone" required="required" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"/>
+                    <input type="tel" name="telefone" id="telefone" class="form-control phone" required="required" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                        <?php
+                            if(isset($_SESSION["telefone"])){
+                                echo'value="'.$_SESSION["telefone"].'"';
+                            }
+                        ?>
+                    />
                 </div>
 
                 <div class = "col-lg-4 col-sm-12">
                     <div class="row">
                         <div class = "col">
                             <label style="padding: 1rem;"> CEP </label>
-                            <input type="text" name="cep" id="cep" class="form-control cep" required="required"/>
+                            <input type="text" name="cep" id="cep" class="form-control cep" required="required"
+                                <?php
+                                    if(isset($_SESSION["cep"])){
+                                        echo'value="'.$_SESSION["cep"].'"';
+                                    }
+                                ?>
+                            />
                         </div>
                         <div class = "col-lg-4">
                             <label style="padding: 1rem;"> Número </label>
-                            <input type="number" name="numero" id="numero" class="form-control" required="required"/>
+                            <input type="number" name="numero" id="numero" class="form-control" required="required"
+                            <?php
+                                if(isset($_SESSION["numero"])){
+                                    echo'value="'.$_SESSION["numero"].'"';
+                                }
+                            ?>
+                            />
                         </div>
                     </div>
 
@@ -133,24 +172,60 @@
                     </select>
 
                     <label style="padding: 1rem;"> Cidade </label>
-                    <input type="text" name="cidade" id="cidade" class="form-control" required="required"/>
+                    <input type="text" name="cidade" id="cidade" class="form-control" required="required"
+                    <?php
+                        if(isset($_SESSION["cidade"])){
+                            echo'value="'.$_SESSION["cidade"].'"';
+                        }
+                    ?>
+                    />
 
                     <label style="padding: 1rem;"> Bairro </label>
-                    <input type="text" name="bairro" id="bairro" class="form-control" required="required"/>
+                    <input type="text" name="bairro" id="bairro" class="form-control" required="required"
+                    <?php
+                        if(isset($_SESSION["bairro"])){
+                            echo'value="'.$_SESSION["bairro"].'"';
+                        }
+                    ?>
+                    />
 
                     <label style="padding: 1rem;"> Rua </label>
-                    <input type="text" name="rua" id="rua" class="form-control" required="required"/>
+                    <input type="text" name="rua" id="rua" class="form-control" required="required"
+                    <?php
+                        if(isset($_SESSION["rua"])){
+                            echo'value="'.$_SESSION["rua"].'"';
+                        }
+                    ?>
+                    />
                 </div>
 
                 <div class = "col-lg-4 col-sm-12">
                     <label style="padding: 1rem;"> Nome completo </label>
-                    <input type="text" name="nome" id="nome" class="form-control" required="required"/>
+                    <input type="text" name="nome" id="nome" class="form-control" required="required"
+                    <?php
+                        if(isset($_SESSION["nome"])){
+                            echo'value="'.$_SESSION["nome"].'"';
+                        }
+                    ?>
+                    />
 
                     <label style="padding: 1rem;"> CPF </label>
-                    <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"/>
+                    <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"
+                    <?php
+                        if(isset($_SESSION["cpf"])){
+                            echo'value="'.$_SESSION["cpf"].'"';
+                        }
+                    ?>
+                    />
 
                     <label style="padding: 1rem;"> E-mail </label>
-                    <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"/>
+                    <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"
+                    <?php
+                        if(isset($_SESSION["email"])){
+                            echo'value="'.$_SESSION["email"].'"';
+                        }
+                    ?>
+                    />
 
                     <label style="padding: 1rem;"> Confirmação </label>
                     <input type="email" name="email" id="conf_email" class="form-control email" required="required" placeholder="exemplo@email.com"/>
@@ -186,10 +261,8 @@
                 $razao_social=$_POST["razao_social"];
                 $nome_fantasia=$_POST["nome_fantasia"];
                 $cnpj=$_POST["cnpj"];
-                $categoria=$_POST["categoria"];
                 $telefone=$_POST["telefone"];
                 $cep=$_POST["cep"];
-                $estado=$_POST["estado"];
                 $cidade=$_POST["cidade"];
                 $bairro=$_POST["bairro"];
                 $rua=$_POST["rua"];
@@ -226,26 +299,31 @@
 
                 if($validaCNPJ->rowCount()>0){
                     $flagCNPJ=false;
-                    $stringHeader.='cnpjjaexiste=true';
+
+                    if($stringHeader=='Location: cadastro_empresa.php?'){
+                        $stringHeader.='cnpjjaexiste=true';
+                    }else{
+                        $stringHeader.='&cnpjjaexiste=true';
+                    }
                 }
 
                 if($validaCPF->rowCount()>0){
                     $flagCPF=false;
 
-                    if(!$flagCNPJ){
-                        $stringHeader.='&cpfjaexiste=true';
-                    }else{
+                    if($stringHeader=='Location: cadastro_empresa.php?'){
                         $stringHeader.='cpfjaexiste=true';
+                    }else{
+                        $stringHeader.='&cpfjaexiste=true';
                     }
                 }
 
                 if($validaEmail->rowCount()>0){
                     $flagEmail=false;
 
-                    if(!$flagCPF){
-                        $stringHeader.='&emailjaexiste=true';
-                    }else{
+                    if($stringHeader=='Location: cadastro_empresa.php?'){
                         $stringHeader.='emailjaexiste=true';
+                    }else{
+                        $stringHeader.='&emailjaexiste=true';
                     }
                 }
 
@@ -272,6 +350,21 @@
 
                     header('Location: ../index.php');
                 }else{
+                    $_SESSION["razao_social"]=$razao_social;
+                    $_SESSION["nome_fantasia"]=$nome_fantasia;
+                    $_SESSION["cnpj"]=$cnpj;
+                    $_SESSION["categoria"]=$categoria;
+                    $_SESSION["telefone"]=$telefone;
+                    $_SESSION["cep"]=$cep;
+                    $_SESSION["estado"]=$estado;
+                    $_SESSION["cidade"]=$cidade;
+                    $_SESSION["bairro"]=$bairro;
+                    $_SESSION["rua"]=$rua;
+                    $_SESSION["numero"]=$numero;
+                    $_SESSION["nome"]=$nome;
+                    $_SESSION["cpf"]=$cpf;
+                    $_SESSION["email"]=$email;
+
                     header($stringHeader);
                 }
             }

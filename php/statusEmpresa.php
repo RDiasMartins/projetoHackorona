@@ -65,8 +65,6 @@
                                                     }]
                                                 },
                                                 options: {
-
-
                                                         yAxes: [{
                                                             ticks: {
                                                                 beginAtZero: true
