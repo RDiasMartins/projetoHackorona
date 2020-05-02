@@ -9,6 +9,7 @@
         ON cupom_cliente.codigo=cupom.codigo AND cupom_cliente.cpf=:cpf' );
     $sth -> bindValue(":cpf", $cpf);
     $sth->execute();
+    
 
 
     if($sth->rowCount()){
