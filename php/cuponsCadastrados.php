@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/estilo.min.css" />
         <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet"/>
+        <script src="../js/funcoes.js"></script>
     </head>
     <body>
 
@@ -186,7 +187,7 @@
                                                             <p class="card-text ">'.$linha['descricao'].'</p>
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="btn-group">
-                                                                <button style="background-color:#FFDB58; color:white;" class="btn" data-toggle="modal" data-target="#ModalCompra">
+                                                                <button style="background-color:#FFDB58; color:white;" class="btn" data-toggle="modal" data-target="#ModalCompra" onclick="define_link('.$linha['codigo'].')">
                                                                     Comprar
                                                                 </button>
                                                             </div>
@@ -222,7 +223,7 @@
                                                 <br/>
                                                 <div class = "float-right">
                                                     <a class="btn btn-md btn-warning" href="cuponsCadastrados.php" role="button">Cancelar</a>
-                                                    <a class="btn btn-md btn-warning" href="finaliza_compra.php?codigo='.$_SESSION['codigo'].'&cpf='.$_SESSION['cpf'].'" role="button">Finalizar</a>
+                                                    <a class="btn btn-md btn-warning" href="#" role="button" id="finalizar_compra">Finalizar</a>
                                                 </div>
                                             </div>
                                         </div>
