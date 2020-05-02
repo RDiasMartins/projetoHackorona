@@ -11,6 +11,7 @@
     $sth->execute();
     
 
+
     if($sth->rowCount()){
         $preco=0;
         while($linha=$sth->fetch()){

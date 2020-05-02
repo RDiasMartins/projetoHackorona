@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -58,17 +61,35 @@
                 <div class = "row">
                     <div class = "form-group col-lg-2 col-sm-4">
                         <label style="padding: 0.5rem;"> CPF </label>
-                        <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"/>
+                        <input type="text" name="cpf" id="cpf" class="form-control cpf" required="required" placeholder="000.000.000-00"
+                        <?php
+                            if(isset($_SESSION["cpf"])){
+                                echo'value="'.$_SESSION["cpf"].'"';
+                            }
+                        ?>
+                        />
                     </div>
                     <div class = "form-group col-lg-10 col-sm-8">
                         <label style="padding: 0.5rem;"> Nome completo </label>
-                        <input type="text" name="nome" id="nome" class="form-control" required="required;"/>
+                        <input type="text" name="nome" id="nome" class="form-control" required="required;"
+                        <?php
+                            if(isset($_SESSION["nome"])){
+                                echo'value="'.$_SESSION["nome"].'"';
+                            }
+                        ?>
+                        />
                     </div>
                 </div>
                 <div class = "row">
                     <div class = "form-group col-lg-6 col-sm-6">
                         <label style="padding:  0.5rem;"> Email </label>
-                        <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"/>
+                        <input type="email" name="email" id="email" class="form-control email" required="required" placeholder="exemplo@email.com"
+                        <?php
+                            if(isset($_SESSION["email"])){
+                                echo'value="'.$_SESSION["email"].'"';
+                            }
+                        ?>
+                        />
                     </div>
                     <div class="form-group col-lg-6 col-sm-6">
                         <label style="padding:  0.5rem;"> Confirmação </label>
@@ -149,6 +170,9 @@
 
                         header('Location: ../index.php');
                     }else{
+                        $_SESSION["cpf"]=$cpf;
+                        $_SESSION["nome"]=$nome;
+                        $_SESSION["email"]=$email;
                         header($stringHeader);
                     }
                 }
