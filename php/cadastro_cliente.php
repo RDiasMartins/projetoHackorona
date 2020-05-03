@@ -139,7 +139,7 @@
                     $flagCPF=true;
                     $flagEmail=true;
 
-                    $stringHeader='Location: cadastro_cliente.php?';
+                    $stringHeader='location: cadastro_cliente.php?';
 
                     if($validaCPF->rowCount()>0){
                         $flagCPF=false;
@@ -166,7 +166,7 @@
                         $sth->bindValue(':senha', $senha, PDO::PARAM_STR);
                         $sth->execute();
 
-                        header('Location: ../index.php');
+                        header('location: ../index.php');
                     }else{
                         $_SESSION["cpf"]=$cpf;
                         $_SESSION["nome"]=$nome;

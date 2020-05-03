@@ -262,6 +262,8 @@
                 $telefone=$_POST["telefone"];
                 $cep=$_POST["cep"];
                 $cidade=$_POST["cidade"];
+                $categoria=$_POST["categoria"];
+                $estado=$_POST["estado"];
                 $bairro=$_POST["bairro"];
                 $rua=$_POST["rua"];
                 $numero=$_POST["numero"];
@@ -293,12 +295,12 @@
                 $flagCPF=true;
                 $flagCNPJ=true;
 
-                $stringHeader='Location: cadastro_empresa.php?';
+                $stringHeader='location: cadastro_empresa.php?';
 
                 if($validaCNPJ->rowCount()>0){
                     $flagCNPJ=false;
 
-                    if($stringHeader=='Location: cadastro_empresa.php?'){
+                    if($stringHeader=='location: cadastro_empresa.php?'){
                         $stringHeader.='cnpjjaexiste=true';
                     }else{
                         $stringHeader.='&cnpjjaexiste=true';
@@ -308,7 +310,7 @@
                 if($validaCPF->rowCount()>0){
                     $flagCPF=false;
 
-                    if($stringHeader=='Location: cadastro_empresa.php?'){
+                    if($stringHeader=='location: cadastro_empresa.php?'){
                         $stringHeader.='cpfjaexiste=true';
                     }else{
                         $stringHeader.='&cpfjaexiste=true';
@@ -318,7 +320,7 @@
                 if($validaEmail->rowCount()>0){
                     $flagEmail=false;
 
-                    if($stringHeader=='Location: cadastro_empresa.php?'){
+                    if($stringHeader=='location: cadastro_empresa.php?'){
                         $stringHeader.='emailjaexiste=true';
                     }else{
                         $stringHeader.='&emailjaexiste=true';
@@ -346,7 +348,7 @@
                     $sth->bindValue(':senha', $senha, PDO::PARAM_STR);
                     $sth->execute();
 
-                    header('Location: ../index.php');
+                    header('location: ../index.php');
                 }else{
                     $_SESSION["razao_social"]=$razao_social;
                     $_SESSION["nome_fantasia"]=$nome_fantasia;
