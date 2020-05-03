@@ -1,5 +1,6 @@
 <?php
     session_start();
+    if(empty($_POST)){
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,8 +32,6 @@
 
     <div class="container">
         <?php
-            if(empty($_POST)){
-
                 if(isset($_GET['cnpjjaexiste'])){
                     echo'
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
