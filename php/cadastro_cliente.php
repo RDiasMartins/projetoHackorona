@@ -116,8 +116,6 @@
             <?php
                 }
                 else{
-                    session_start();
-
                     include "conexao_pdo.php";
 
                     $nome=$_POST["nome"];
