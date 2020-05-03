@@ -9,7 +9,7 @@
         ON cupom_cliente.codigo=cupom.codigo AND cupom_cliente.cpf=:cpf' );
     $sth -> bindValue(":cpf", $cpf);
     $sth->execute();
-    
+
 
 
     if($sth->rowCount()){
@@ -19,7 +19,9 @@
             echo'
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="../imgCupom/'.$linha['imagemcupom'].'" class="card-img" width="100%" height="100%" >
+                        <div class="card-header">
+                            <img src="../imgCupom/'.$linha['imagemcupom'].'" width="350px" height="200px" >
+                        </div>
                         <div class="card-body">
                         <p class="card-text"><h4 class="card-title">'.$linha['titulo'].'</h5></p>
                             <h5 class="card-title">Desconto: '.$linha['desconto'].'%</h4>
