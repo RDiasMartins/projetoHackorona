@@ -254,8 +254,6 @@
         <?php
             }
             else{
-                session_start();
-
                 include "conexao_pdo.php";
 
                 $razao_social=$_POST["razao_social"];
@@ -353,10 +351,8 @@
                     $_SESSION["razao_social"]=$razao_social;
                     $_SESSION["nome_fantasia"]=$nome_fantasia;
                     $_SESSION["cnpj"]=$cnpj;
-                    $_SESSION["categoria"]=$categoria;
                     $_SESSION["telefone"]=$telefone;
                     $_SESSION["cep"]=$cep;
-                    $_SESSION["estado"]=$estado;
                     $_SESSION["cidade"]=$cidade;
                     $_SESSION["bairro"]=$bairro;
                     $_SESSION["rua"]=$rua;
